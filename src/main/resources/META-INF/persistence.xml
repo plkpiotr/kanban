@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
 
-    <persistence-unit name="Example">
+    <persistence-unit name="KanbanUnit">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <!--<class>com.plkpiotr.stickers.User</class>-->
         <properties>
