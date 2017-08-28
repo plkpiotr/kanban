@@ -7,11 +7,9 @@ TODO
 TODO
 ## Software tools
 - IntelliJ IDEA 2017.2.2
-- PostgreSQL 9.6 [pgAdmin III]
+- PostgreSQL 9.6 [pgAdmin 4]
 - Apache Tomcat 8.5.20
 ## Overall structure project's
-- .idea [ready-made files]
-- lib [ready-made files]
 - src:
   - main:
     - java/com/plkpiotr/kanban:
@@ -28,6 +26,8 @@ TODO
   - test:
     - TODO
 - pom.xml
+- .idea [ready-made files in .zip]
+- lib [ready-made files in .zip]
 ## How to run?
 TODO
 ## Comments
