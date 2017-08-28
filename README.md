@@ -12,11 +12,14 @@ TODO
 ## Overall structure project's
 - src:
   - main:
-    - java/com/plkpiotr/kanban:
+    - java/com/plkpiotr/kanban/api:
+      - Employee.java
+      - Project.java
+      - Task.java
+    - java/com/plkpiotr/kanban/dao:
       - TODO
-    - resources:
-      - META-INF:
-        - persistence.xml
+    - resources/META-INF:
+      - persistence.xml
     - webapp:
       - WEB-INF:
         - web.xml
