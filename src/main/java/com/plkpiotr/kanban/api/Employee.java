@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.util.ArrayList;
 
 /**
- * Represents a employee in a team of programmers
- * A employee can be enrolled in many projects and add a lot of task to them
+ * Represents a employee in a team of programmers.
+ * A employee can be enrolled in many projects and add a lot of task to them.
  */
 @Entity
 @Table(name = "Employees")

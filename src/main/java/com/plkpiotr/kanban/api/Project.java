@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.util.ArrayList;
 
 /**
- * Represents a project in a company
- * A project can have many tasks
+ * Represents a project in a company.
+ * A project can have many tasks.
  */
 @Entity
 @Table(name = "Projects")

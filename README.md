@@ -17,7 +17,9 @@ TODO
       - Project.java
       - Task.java
     - java/com/plkpiotr/kanban/dao:
-      - TODO
+      - EmployeeDAO.java
+      - ProjectDAO.java
+      - TaskDAO.java
     - resources/META-INF:
       - persistence.xml
     - webapp:
