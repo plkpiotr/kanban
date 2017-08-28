@@ -1,6 +1,7 @@
 package com.plkpiotr.kanban.api;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 
 /**
  * Represents a project in a company
@@ -10,7 +11,7 @@ import javax.persistence.*;
 @Table(name = "Projects")
 public class Project {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "name")
@@ -18,4 +19,7 @@ public class Project {
 
     @Column(name = "company")
     private String company;
+
+    @OneToMany(mappedBy = "idProject", fetch = FetchType.EAGER)
+    private ArrayList<Task> tasks;
 }

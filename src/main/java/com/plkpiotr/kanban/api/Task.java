@@ -4,24 +4,29 @@ import javax.persistence.*;
 
 /**
  * Represents a task in a projects
- * A project can have many tasks
  */
 @Entity
 @Table(name = "Tasks")
 public class Task {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "idEmployee")
-    private String idEmployee;
+    @ManyToOne
+    @JoinColumn(name = "idEmployee")
+    private Employee idEmployee;
 
     @Column(name = "idProject")
-    private String idProject;
+    @ManyToOne
+    @JoinColumn(name = "idProject")
+    private Project idProject;
 
     @Column(name = "category")
     private String category;
 
+    @Lob
     @Column(name = "content")
     private String content;
+
 }
