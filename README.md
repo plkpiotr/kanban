@@ -23,7 +23,7 @@ TODO
     - java/com/plkpiotr/kanban/listeners:
       - ConfigurationListener.java
       - InitializationListener.java
-    - java/com/plkpiotr/kanban/listeners:
+    - java/com/plkpiotr/kanban/servlets:
       - IndexServlet.java
     - resources/META-INF:
       - persistence.xml

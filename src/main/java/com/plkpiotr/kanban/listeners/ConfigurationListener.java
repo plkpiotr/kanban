@@ -34,7 +34,7 @@ public class ConfigurationListener implements ServletContextListener {
      *
      * @return Created manager of entities or null, if it already exists.
      */
-    public static EntityManager createEntityManager() {
+    static EntityManager createEntityManager() {
         return (entityManagerFactory != null) ? entityManagerFactory.createEntityManager() : null;
     }
 

@@ -12,21 +12,17 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "idEmployee")
     @ManyToOne
     @JoinColumn(name = "idEmployee")
     private Employee idEmployee;
 
-    @Column(name = "idProject")
     @ManyToOne
     @JoinColumn(name = "idProject")
     private Project idProject;
 
-    @Column(name = "category")
     private String category;
 
     @Lob
-    @Column(name = "content")
     private String content;
 
     public int getId() {

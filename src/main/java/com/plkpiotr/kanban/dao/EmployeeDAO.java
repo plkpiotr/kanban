@@ -32,11 +32,11 @@ public class EmployeeDAO {
     }
 
     /**
-     * Adds a employee to database.
+     * Inserts a employee to database.
      *
      * @param employee Employee object waiting for adding
      */
-    public boolean addEmployee(Employee employee) {
+    public boolean insertEmployee(Employee employee) {
         EntityTransaction entityTransaction = entityManager.getTransaction();
         try {
             entityTransaction.begin();

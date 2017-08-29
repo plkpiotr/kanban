@@ -1,18 +1,19 @@
 package com.plkpiotr.kanban.listeners;
 
-import com.plkpiotr.kanban.api.Employee;
 import com.plkpiotr.kanban.dao.EmployeeDAO;
 import com.plkpiotr.kanban.dao.ProjectDAO;
 import com.plkpiotr.kanban.dao.TaskDAO;
 
 import javax.persistence.EntityManager;
-import javax.servlet.*;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletRequestEvent;
+import javax.servlet.ServletRequestListener;
 import javax.servlet.annotation.WebListener;
-import javax.servlet.http.HttpSessionAttributeListener;
-import javax.servlet.http.HttpSessionEvent;
-import javax.servlet.http.HttpSessionListener;
-import javax.servlet.http.HttpSessionBindingEvent;
 
+
+/**
+ * Initializes ready for use DAO objects.
+ */
 @WebListener()
 public class InitializationListener implements ServletRequestListener {
 
