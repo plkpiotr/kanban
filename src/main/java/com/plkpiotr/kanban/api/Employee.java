@@ -1,6 +1,7 @@
 package com.plkpiotr.kanban.api;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 
@@ -10,7 +11,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = "Employees")
-public class Employee {
+public class Employee  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
