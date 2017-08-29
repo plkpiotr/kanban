@@ -20,6 +20,11 @@ TODO
       - EmployeeDAO.java
       - ProjectDAO.java
       - TaskDAO.java
+    - java/com/plkpiotr/kanban/listeners:
+      - ConfigurationListener.java
+      - InitializationListener.java
+    - java/com/plkpiotr/kanban/listeners:
+      - IndexServlet.java
     - resources/META-INF:
       - persistence.xml
     - webapp:

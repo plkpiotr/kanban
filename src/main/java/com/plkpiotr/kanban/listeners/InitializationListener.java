@@ -3,12 +3,10 @@ package com.plkpiotr.kanban.listeners;
 import com.plkpiotr.kanban.api.Employee;
 import com.plkpiotr.kanban.dao.EmployeeDAO;
 import com.plkpiotr.kanban.dao.ProjectDAO;
+import com.plkpiotr.kanban.dao.TaskDAO;
 
 import javax.persistence.EntityManager;
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
-import javax.servlet.ServletRequestEvent;
-import javax.servlet.ServletRequestListener;
+import javax.servlet.*;
 import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpSessionAttributeListener;
 import javax.servlet.http.HttpSessionEvent;
@@ -26,5 +24,10 @@ public class InitializationListener implements ServletRequestListener {
         EntityManager entityManager = ConfigurationListener.createEntityManager();
         EmployeeDAO employeeDAO = new EmployeeDAO(entityManager);
         ProjectDAO projectDAO = new ProjectDAO(entityManager);
+        TaskDAO taskDAO = new TaskDAO(entityManager);
+        ServletRequest servletRequest = servletRequestEvent.getServletRequest();
+        servletRequest.setAttribute("initializedEmployeeDAO", employeeDAO);
+        servletRequest.setAttribute("initializedProjectDAO", projectDAO);
+        servletRequest.setAttribute("initializedTaskDAO", taskDAO);
     }
 }
