@@ -1,8 +1,6 @@
 package com.plkpiotr.kanban.api;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.util.Collection;
 import java.util.List;
 
 /**

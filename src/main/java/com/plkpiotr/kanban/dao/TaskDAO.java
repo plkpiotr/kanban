@@ -1,6 +1,9 @@
 package com.plkpiotr.kanban.dao;
 
+import com.plkpiotr.kanban.api.Task;
+
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 
 /**
  * Provides "Data Access Object" for "Task" class.
@@ -15,5 +18,24 @@ public class TaskDAO {
      */
     public TaskDAO(EntityManager entityManager) {
         this.entityManager = entityManager;
+    }
+
+    /**
+     * Inserts a task to database.
+     *
+     * @param task Task object waiting for inserting to database.
+     */
+    public boolean insertProject(Task task) {
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        try {
+            entityTransaction.begin();
+            entityManager.persist(task);
+            entityTransaction.commit();
+            return true;
+        } catch (Exception exception) {
+            entityTransaction.rollback();
+            exception.printStackTrace();
+            return false;
+        }
     }
 }

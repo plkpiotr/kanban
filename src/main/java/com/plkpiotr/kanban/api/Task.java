@@ -1,7 +1,6 @@
 package com.plkpiotr.kanban.api;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 /**
  * Represents a task in a project.

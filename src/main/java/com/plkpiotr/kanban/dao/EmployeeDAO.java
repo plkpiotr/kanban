@@ -5,7 +5,7 @@ import com.plkpiotr.kanban.api.Project;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Provides "Data Access Object" for "Employee" class.
@@ -23,18 +23,22 @@ public class EmployeeDAO {
     }
 
     /**
-     * Gets all projects in the employee participates
+     * Gets all projects in the employee participates.
      *
-     * @param id ID employee's.
+     * @param idEmployee ID employee's in the table with tasks.
      */
-    public ArrayList<Project> getProjects(int id) {
-        return new ArrayList<Project>();
+    public List<Project> getListOfProjects(int idEmployee) {
+        List listOfProjects = this.entityManager.createNativeQuery("SELECT projects.name FROM projects, tasks WHERE" +
+                " tasks.\"idEmployee\" = :idEmployee AND projects.id = tasks.\"idProject\"")
+                .setParameter("idEmployee",idEmployee)
+                .getResultList();
+        return listOfProjects;
     }
 
     /**
      * Inserts a employee to database.
      *
-     * @param employee Employee object waiting for adding
+     * @param employee Employee object waiting for inserting to database.
      */
     public boolean insertEmployee(Employee employee) {
         EntityTransaction entityTransaction = entityManager.getTransaction();
