@@ -10,7 +10,7 @@ import java.util.List;
  * A project can have many tasks.
  */
 @Entity
-@Table(name = "Projects")
+@Table(name = "projects")
 public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -10,7 +10,7 @@ import java.util.List;
  * A employee can be enrolled in many projects and add a lot of task to them.
  */
 @Entity
-@Table(name = "Employees")
+@Table(name = "employees")
 public class Employee  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

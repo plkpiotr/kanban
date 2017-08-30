@@ -7,7 +7,7 @@ import java.io.Serializable;
  * Represents a task in a project.
  */
 @Entity
-@Table(name = "Tasks")
+@Table(name = "tasks")
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
