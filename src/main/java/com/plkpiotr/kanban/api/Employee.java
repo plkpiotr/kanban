@@ -29,7 +29,7 @@ public class Employee  {
     private String avatar;
 
     @OneToMany(mappedBy = "idEmployee", fetch = FetchType.EAGER)
-    private List<Task> projects;
+    private List<Task> listOfProjects;
 
     public int getId() {
         return id;

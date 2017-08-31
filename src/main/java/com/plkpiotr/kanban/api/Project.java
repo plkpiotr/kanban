@@ -25,6 +25,9 @@ public class Project {
     @OneToMany(mappedBy = "idProject", fetch = FetchType.EAGER)
     private List<Task> ListOfTasksByCategory;
 
+    @OneToMany(mappedBy = "idProject", fetch = FetchType.EAGER)
+    private List<Task> listOfEmployeesInCompany;
+
     public int getId() {
         return id;
     }
@@ -63,13 +66,5 @@ public class Project {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public List<Task> getTasks() {
-        return ListOfTasksByCategory;
-    }
-
-    public void setTasks(List<Task> tasks) {
-        this.ListOfTasksByCategory = tasks;
     }
 }
