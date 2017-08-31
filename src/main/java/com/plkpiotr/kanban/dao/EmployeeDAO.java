@@ -23,19 +23,6 @@ public class EmployeeDAO {
     }
 
     /**
-     * Gets all projects in the employee participates.
-     *
-     * @param idEmployee ID employee's in the table with tasks.
-     */
-    public List<Project> getListOfProjects(int idEmployee) {
-        List listOfProjects = this.entityManager.createNativeQuery("SELECT projects.name FROM projects, tasks WHERE" +
-                " tasks.\"idEmployee\" = :idEmployee AND projects.id = tasks.\"idProject\"")
-                .setParameter("idEmployee",idEmployee)
-                .getResultList();
-        return listOfProjects;
-    }
-
-    /**
      * Inserts a employee to database.
      *
      * @param employee Employee object waiting for inserting to database.
@@ -52,6 +39,20 @@ public class EmployeeDAO {
             exception.printStackTrace();
             return false;
         }
+    }
+
+    /**
+     * Gets all projects in the employee participates.
+     *
+     * @param idEmployee ID employee's in the table with tasks.
+     */
+    public List<Project> getListOfProjects(int idEmployee) {
+        List listOfProjects = this.entityManager.createNativeQuery("SELECT projects.name, projects.description,  " +
+                "projects.color FROM projects, tasks WHERE tasks.\"idEmployee\" = :idEmployee AND projects.id = " +
+                "tasks.\"idProject\"")
+                .setParameter("idEmployee",idEmployee)
+                .getResultList();
+        return listOfProjects;
     }
 
     /**

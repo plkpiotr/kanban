@@ -20,7 +20,7 @@ public class Task {
     @JoinColumn(name = "idProject")
     private Project idProject;
 
-    private String category;
+    private int category;
 
     @Lob
     private String content;
@@ -49,11 +49,11 @@ public class Task {
         this.idProject = idProject;
     }
 
-    public String getCategory() {
+    public int getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(int category) {
         this.category = category;
     }
 

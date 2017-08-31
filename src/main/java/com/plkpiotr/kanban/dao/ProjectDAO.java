@@ -23,23 +23,6 @@ public class ProjectDAO {
     }
 
     /**
-     * Gets tasks in a project by category.
-     *
-     * @param category One of the category task's todo, doing, done, archived.
-     * @param idProject Name of reviewed project
-     */
-    public List<Task> getListOfTasks(String category, int idProject) {
-        List listOfProjects = this.entityManager.createNativeQuery("SELECT e.avatar, e.name, e.surname, t.content  " +
-                "FROM employees AS e, tasks AS t WHERE t.category = ':kind' AND t.\"idProject\"= :idProject AND e" +
-                ".id = t" +
-                ".\"idEmployee\"")
-                .setParameter("kind", category)
-                .setParameter("idProject",idProject)
-                .getResultList();
-        return listOfProjects;
-    }
-
-    /**
      * Inserts a project to database.
      *
      * @param project Project object waiting for inserting to database.
@@ -56,5 +39,21 @@ public class ProjectDAO {
             exception.printStackTrace();
             return false;
         }
+    }
+
+    /**
+     * Gets tasks in a project by category.
+     *
+     * @param category One of the category task's: todo [0], doing [1], done [2].
+     * @param idProject Name of reviewed project
+     */
+    public List<Task> getListOfTasksByCategory(int category, int idProject) {
+        List listOfProjects = this.entityManager.createNativeQuery("SELECT e.avatar, e.name, e.surname, t.content  " +
+                "FROM employees AS e, tasks AS t WHERE t.category = :kind AND t.\"idProject\"= :idProject AND e" +
+                ".id = t.\"idEmployee\"")
+                .setParameter("kind", category)
+                .setParameter("idProject",idProject)
+                .getResultList();
+        return listOfProjects;
     }
 }

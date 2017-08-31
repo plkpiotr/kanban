@@ -25,7 +25,7 @@ public class TaskDAO {
      *
      * @param task Task object waiting for inserting to database.
      */
-    public boolean insertProject(Task task) {
+    public boolean insertTask(Task task) {
         EntityTransaction entityTransaction = entityManager.getTransaction();
         try {
             entityTransaction.begin();

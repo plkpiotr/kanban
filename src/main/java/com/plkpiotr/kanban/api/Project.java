@@ -18,8 +18,12 @@ public class Project {
 
     private String company;
 
+    private String color;
+
+    private String description;
+
     @OneToMany(mappedBy = "idProject", fetch = FetchType.EAGER)
-    private List<Task> tasks;
+    private List<Task> ListOfTasksByCategory;
 
     public int getId() {
         return id;
@@ -43,5 +47,29 @@ public class Project {
 
     public void setCompany(String company) {
         this.company = company;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public List<Task> getTasks() {
+        return ListOfTasksByCategory;
+    }
+
+    public void setTasks(List<Task> tasks) {
+        this.ListOfTasksByCategory = tasks;
     }
 }
