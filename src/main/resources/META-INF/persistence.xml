@@ -17,7 +17,7 @@
             <property name="hibernate.connection.username" value="postgres"/>
             <property name="hibernate.connection.password" value="password"/>
             <property name="hibernate.connection.dialect" value="org.hibernate.dialect.PostgreSQL94Dialect"/>
-            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <!--<property name="hibernate.hbm2ddl.auto" value="create"/>-->
         </properties>
 
     </persistence-unit>

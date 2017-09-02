@@ -11,6 +11,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Path;
 import javax.persistence.criteria.Root;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Provides "Data Access Object" for "Project" class.
@@ -47,17 +48,30 @@ public class ProjectDAO {
     }
 
     /**
-     * Gets all projects in a company.
+     * Gets all tasks in a project.
      *
-     * @param idEmployee ID employee's.
+     * @param idProject ID project's.
      */
-    public List<Task> listOfAllTasks(final int idEmployee) {
+    public List<Task> listOfAllTasks(final int idProject) {
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
         CriteriaQuery<Task> criteriaQuery = builder.createQuery(Task.class);
         Root<Task> task = criteriaQuery.from(Task.class);
-        Path<Long> id = task.get("id");
-        criteriaQuery.select(task).where(builder.equal(id, idEmployee));
+        Path<Long> id = task.get("id_project");
+        criteriaQuery.select(task).where(builder.equal(id, idProject));
         TypedQuery<Task> query = entityManager.createQuery(criteriaQuery);
         return query.getResultList();
+    }
+
+    /**
+     * Gets tasks for a employee by category.
+     *
+     * @param tasks List of all tasks for a employee.
+     * @param category One of the category task's: "todo", "doing" or "done".
+     */
+    public List<Task> listOfTasksByCategory(List<Task> tasks, final String category) {
+        tasks.stream()
+                .filter(task -> category.equals(task.getCategory()))
+                .collect(Collectors.toList());
+        return tasks;
     }
 }
