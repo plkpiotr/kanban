@@ -11,8 +11,9 @@ import javax.persistence.*;
 public class Task {
 
     @Id
-    @GeneratedValue
-    private long id;
+    @Column(columnDefinition = "serial")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @Column(nullable = false, length = 5)
     private String category;
@@ -28,11 +29,11 @@ public class Task {
     @JoinColumn(name = "id_employee")
     private Employee employee;
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

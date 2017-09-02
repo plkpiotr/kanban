@@ -12,8 +12,9 @@ import java.util.List;
 public class Employee  {
 
     @Id
-    @GeneratedValue
-    private long id;
+    @Column(columnDefinition = "serial")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @Column(nullable = false, length = 15)
     private String name;
@@ -43,12 +44,12 @@ public class Employee  {
     @JoinColumn(name = "id_company")
     private Company company;
 
-    public long getId() {
-        return id;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public Integer getId() {
+        return id;
     }
 
     public String getName() {

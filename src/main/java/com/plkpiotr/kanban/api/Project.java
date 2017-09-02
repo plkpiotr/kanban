@@ -12,10 +12,11 @@ import java.util.List;
 public class Project {
 
     @Id
-    @GeneratedValue
-    private long id;
+    @Column(columnDefinition = "serial")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-    @Column(nullable = false, length = 15)
+    @Column(nullable = false, length = 20)
     private String name;
 
     @Column(nullable = false, length = 64)
@@ -34,11 +35,11 @@ public class Project {
     @JoinColumn(name = "id_company")
     private Company company;
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
