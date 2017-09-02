@@ -13,10 +13,12 @@ TODO
 - src:
   - main:
     - java/com/plkpiotr/kanban/api:
+      - Company.java
       - Employee.java
       - Project.java
       - Task.java
     - java/com/plkpiotr/kanban/dao:
+      - CompanyDAO.java
       - EmployeeDAO.java
       - ProjectDAO.java
       - TaskDAO.java

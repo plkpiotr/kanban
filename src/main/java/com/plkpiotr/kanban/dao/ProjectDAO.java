@@ -1,9 +1,16 @@
 package com.plkpiotr.kanban.dao;
 
 import com.plkpiotr.kanban.api.Project;
+import com.plkpiotr.kanban.api.Task;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Path;
+import javax.persistence.criteria.Root;
+import java.util.List;
 
 /**
  * Provides "Data Access Object" for "Project" class.
@@ -39,22 +46,18 @@ public class ProjectDAO {
         }
     }
 
-//    /**
-//     * Gets tasks in a project by category.
-//     *
-//     * @param category One of the category task's: todo [0], doing [1], done [2].
-//     * @param idProject Name of reviewed project
-//     */
-//    public List<Task> fillListOfTasksByCategory(int category, int idProject) {
-//        return new List<Task>();
-//    }
-//
-//    /**
-//     * Gets employees in a company.
-//     *
-//     * @param company Name of company.
-//     */
-//    public List<String> fillListOfEmployeesInCompany(String company) {
-//        return List<String>();
-//    }
+    /**
+     * Gets all projects in a company.
+     *
+     * @param idEmployee ID employee's.
+     */
+    public List<Task> listOfAllTasks(final int idEmployee) {
+        CriteriaBuilder builder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Task> criteriaQuery = builder.createQuery(Task.class);
+        Root<Task> task = criteriaQuery.from(Task.class);
+        Path<Long> id = task.get("id");
+        criteriaQuery.select(task).where(builder.equal(id, idEmployee));
+        TypedQuery<Task> query = entityManager.createQuery(criteriaQuery);
+        return query.getResultList();
+    }
 }

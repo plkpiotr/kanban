@@ -3,7 +3,8 @@ package com.plkpiotr.kanban.api;
 import javax.persistence.*;
 
 /**
- * Represents a task in a project.
+ * Represents a tasks.
+ * A tasks belongs to a project and employee.
  */
 @Entity
 @Table(name = "tasks")

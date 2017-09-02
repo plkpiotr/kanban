@@ -1,35 +1,32 @@
 package com.plkpiotr.kanban.dao;
 
-import com.plkpiotr.kanban.api.Employee;
+import com.plkpiotr.kanban.api.Company;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
-/**
- * Provides "Data Access Object" for "Employee" class.
- */
-public class EmployeeDAO {
+public class CompanyDAO {
     private EntityManager entityManager;
 
     /**
-     * Creates a employee through given manager of entities.
+     * Creates a company through given manager of entities.
      *
      * @param entityManager Manager of entities for employee.
      */
-    public EmployeeDAO(EntityManager entityManager) {
+    public CompanyDAO(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 
     /**
-     * Inserts a employee to database.
+     * Inserts a company to database.
      *
-     * @param employee Employee object waiting for inserting to database.
+     * @param company Company object waiting for inserting to database.
      */
-    public boolean insertEmployee(Employee employee) {
+    public boolean insertEmployee(Company company) {
         EntityTransaction entityTransaction = entityManager.getTransaction();
         try {
             entityTransaction.begin();
-            entityManager.persist(employee);
+            entityManager.persist(company);
             entityTransaction.commit();
             return true;
         } catch (Exception exception) {
@@ -37,14 +34,5 @@ public class EmployeeDAO {
             exception.printStackTrace();
             return false;
         }
-    }
-
-    /**
-     * Encodes password through "Message-Digest algorithm 5".
-     *
-     * @param password Password posts in a form.
-     */
-    private String encodePassword(String password) {
-        return new String();
     }
 }

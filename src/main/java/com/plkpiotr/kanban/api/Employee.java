@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.util.List;
 
 /**
- * Represents a employee in a team of programmers.
- * A employee can be enrolled in many projects and add a lot of task to them.
+ * Represents a employee.
+ * A employee belongs to a company, can have many tasks and many projects.
  */
 @Entity
 @Table(name = "employees")
@@ -39,11 +39,15 @@ public class Employee  {
     @OneToMany(mappedBy = "employee")
     private List<Task> listOfTask;
 
+    @ManyToOne
+    @JoinColumn(name = "id_company")
+    private Company company;
+
     public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -109,5 +113,13 @@ public class Employee  {
 
     public void setListOfTask(List<Task> listOfTask) {
         this.listOfTask = listOfTask;
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
     }
 }
