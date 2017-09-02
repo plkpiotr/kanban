@@ -1,7 +1,7 @@
 package com.plkpiotr.kanban.dao;
 
 import com.plkpiotr.kanban.api.Employee;
-import com.plkpiotr.kanban.api.Project;
+import com.plkpiotr.kanban.api.Task;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -42,17 +42,15 @@ public class EmployeeDAO {
     }
 
     /**
-     * Gets all projects in the employee participates.
+     * Gets tasks for a employee by category.
      *
-     * @param idEmployee ID employee's in the table with tasks.
+     * @param idEmployee ID employee's/
      */
-    public List<Project> getListOfProjects(int idEmployee) {
-        List listOfProjects = this.entityManager.createNativeQuery("SELECT projects.name, projects.description,  " +
-                "projects.color FROM projects, tasks WHERE tasks.\"idEmployee\" = :idEmployee AND projects.id = " +
-                "tasks.\"idProject\"")
-                .setParameter("idEmployee",idEmployee)
+    public List<Task> listOfTasksForEmployee(int idEmployee) {
+        List listOfTasksByCategory = this.entityManager.createQuery("SELECT t FROM Task t, Employee e WHERE t" +
+                ".idemployee.id = e.id")
                 .getResultList();
-        return listOfProjects;
+        return listOfTasksByCategory;
     }
 
     /**

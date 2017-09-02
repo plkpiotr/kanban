@@ -10,28 +10,36 @@ import java.util.List;
 @Entity
 @Table(name = "employees")
 public class Employee  {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
 
+    @Id
+    @GeneratedValue
+    private long id;
+
+    @Column(nullable = false, length = 15)
     private String name;
 
+    @Column(nullable = false, length = 20)
     private String surname;
 
+    @Column(nullable = false, length = 10)
     private String nick;
 
+    @Column(nullable = false, length = 64)
     private String password;
 
+    @Column(nullable = false, length = 5)
     private String sex;
 
-    private String company;
-
+    @Column(nullable = false, length = 15)
     private String avatar;
 
-    @OneToMany(mappedBy = "idEmployee", fetch = FetchType.EAGER)
-    private List<Task> listOfProjects;
+    @ManyToMany(mappedBy = "listOfEmployees")
+    private List<Project> listOfProjects;
 
-    public int getId() {
+    @OneToMany(mappedBy = "employee")
+    private List<Task> listOfTask;
+
+    public long getId() {
         return id;
     }
 
@@ -79,19 +87,27 @@ public class Employee  {
         this.sex = sex;
     }
 
-    public String getCompany() {
-        return company;
-    }
-
-    public void setCompany(String company) {
-        this.company = company;
-    }
-
     public String getAvatar() {
         return avatar;
     }
 
     public void setAvatar(String avatar) {
         this.avatar = avatar;
+    }
+
+    public List<Project> getListOfProjects() {
+        return listOfProjects;
+    }
+
+    public void setListOfProjects(List<Project> listOfProjects) {
+        this.listOfProjects = listOfProjects;
+    }
+
+    public List<Task> getListOfTask() {
+        return listOfTask;
+    }
+
+    public void setListOfTask(List<Task> listOfTask) {
+        this.listOfTask = listOfTask;
     }
 }

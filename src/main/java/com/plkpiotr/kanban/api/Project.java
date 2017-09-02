@@ -10,25 +10,27 @@ import java.util.List;
 @Entity
 @Table(name = "projects")
 public class Project {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
 
+    @Id
+    @GeneratedValue
+    private long id;
+
+    @Column(nullable = false, length = 15)
     private String name;
 
-    private String company;
-
-    private String color;
-
+    @Column(nullable = false, length = 64)
     private String description;
 
-    @OneToMany(mappedBy = "idProject", fetch = FetchType.EAGER)
-    private List<Task> ListOfTasksByCategory;
+    @Column(nullable = false, length = 15)
+    private String company;
 
-    @OneToMany(mappedBy = "idProject", fetch = FetchType.EAGER)
-    private List<Task> listOfEmployeesInCompany;
+    @ManyToMany
+    private List<Employee> listOfEmployees;
 
-    public int getId() {
+    @OneToMany(mappedBy = "project")
+    private List<Task> listOfTasks;
+
+    public long getId() {
         return id;
     }
 
@@ -44,6 +46,14 @@ public class Project {
         this.name = name;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public String getCompany() {
         return company;
     }
@@ -52,19 +62,19 @@ public class Project {
         this.company = company;
     }
 
-    public String getColor() {
-        return color;
+    public List<Employee> getListOfEmployee() {
+        return listOfEmployees;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void setListOfEmployee(List<Employee> listOfEmployee) {
+        this.listOfEmployees = listOfEmployee;
     }
 
-    public String getDescription() {
-        return description;
+    public List<Task> getListOfTasks() {
+        return listOfTasks;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setListOfTasks(List<Task> listOfTasks) {
+        this.listOfTasks = listOfTasks;
     }
 }

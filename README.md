@@ -9,7 +9,7 @@ TODO
 - IntelliJ IDEA 2017.2.2
 - PostgreSQL 9.6 [pgAdmin 4]
 - Apache Tomcat 8.5.20
-## Overall structure project's
+## Structure project's
 - src:
   - main:
     - java/com/plkpiotr/kanban/api:

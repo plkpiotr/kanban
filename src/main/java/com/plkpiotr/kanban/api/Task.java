@@ -8,24 +8,26 @@ import javax.persistence.*;
 @Entity
 @Table(name = "tasks")
 public class Task {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @GeneratedValue
+    private long id;
 
-    @ManyToOne
-    @JoinColumn(name = "idEmployee")
-    private Employee idEmployee;
+    @Column(nullable = false, length = 5)
+    private String category;
 
-    @ManyToOne
-    @JoinColumn(name = "idProject")
-    private Project idProject;
-
-    private int category;
-
-    @Lob
+    @Column(nullable = false, length = 64)
     private String content;
 
-    public int getId() {
+    @ManyToOne
+    @JoinColumn(name = "id_project")
+    private Project project;
+
+    @ManyToOne
+    @JoinColumn(name = "id_employee")
+    private Employee employee;
+
+    public long getId() {
         return id;
     }
 
@@ -33,27 +35,11 @@ public class Task {
         this.id = id;
     }
 
-    public Employee getIdEmployee() {
-        return idEmployee;
-    }
-
-    public void setIdEmployee(Employee idEmployee) {
-        this.idEmployee = idEmployee;
-    }
-
-    public Project getIdProject() {
-        return idProject;
-    }
-
-    public void setIdProject(Project idProject) {
-        this.idProject = idProject;
-    }
-
-    public int getCategory() {
+    public String getCategory() {
         return category;
     }
 
-    public void setCategory(int category) {
+    public void setCategory(String category) {
         this.category = category;
     }
 
@@ -63,5 +49,21 @@ public class Task {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public Project getProject() {
+        return project;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 }
