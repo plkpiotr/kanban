@@ -30,10 +30,14 @@ TODO
     - resources/META-INF:
       - persistence.xml
     - webapp:
-      - WEB-INF:
-        - web.xml
+      - css:
+        - style.css
+      - img:
+        - icon, background and avatars [PNG files]
       - js:
         - jquery-3.2.1.min.js [ready-made library]
+      - WEB-INF:
+        - web.xml
       - index.jsp
   - test:
     - TODO

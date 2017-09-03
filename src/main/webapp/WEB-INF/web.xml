@@ -8,7 +8,7 @@
     <display-name>Kanban</display-name>
 
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>/WEB-INF/views/index.jsp</welcome-file>
     </welcome-file-list>
 
     <!--<login-config>-->

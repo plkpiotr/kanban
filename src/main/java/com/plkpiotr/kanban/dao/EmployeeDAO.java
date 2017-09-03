@@ -88,7 +88,7 @@ public class EmployeeDAO {
      *
      * @param idEmployee ID employee's.
      */
-    public List<Task> getAllTasks(final int idEmployee) {
+    public List<Task> getAllTasks(int idEmployee) {
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
         CriteriaQuery<Task> criteriaQuery = builder.createQuery(Task.class);
         Root<Task> task = criteriaQuery.from(Task.class);
