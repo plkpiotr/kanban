@@ -32,9 +32,9 @@ public class TaskDAO {
             entityManager.persist(task);
             entityTransaction.commit();
             return true;
-        } catch (Exception exception) {
+        } catch (Exception e) {
             entityTransaction.rollback();
-            exception.printStackTrace();
+            e.printStackTrace();
             return false;
         }
     }

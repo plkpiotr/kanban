@@ -37,9 +37,9 @@ public class CompanyDAO {
             entityManager.persist(company);
             entityTransaction.commit();
             return true;
-        } catch (Exception exception) {
+        } catch (Exception e) {
             entityTransaction.rollback();
-            exception.printStackTrace();
+            e.printStackTrace();
             return false;
         }
     }
@@ -49,7 +49,7 @@ public class CompanyDAO {
      *
      * @param idCompany ID company's.
      */
-    public List<Project> listOfAllProjects(final int idCompany) {
+    public List<Project> getProjects(final int idCompany) {
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
         CriteriaQuery<Project> criteriaQuery = builder.createQuery(Project.class);
         Root<Project> project = criteriaQuery.from(Project.class);
@@ -64,7 +64,7 @@ public class CompanyDAO {
      *
      * @param idCompany ID company's.
      */
-    public List<Employee> listOfAllEmployees(final int idCompany) {
+    public List<Employee> getEmployees(final int idCompany) {
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
         CriteriaQuery<Employee> criteriaQuery = builder.createQuery(Employee.class);
         Root<Employee> employee = criteriaQuery.from(Employee.class);

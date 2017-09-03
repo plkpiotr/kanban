@@ -40,9 +40,9 @@ public class ProjectDAO {
             entityManager.persist(project);
             entityTransaction.commit();
             return true;
-        } catch (Exception exception) {
+        } catch (Exception e) {
             entityTransaction.rollback();
-            exception.printStackTrace();
+            e.printStackTrace();
             return false;
         }
     }
@@ -52,7 +52,7 @@ public class ProjectDAO {
      *
      * @param idProject ID project's.
      */
-    public List<Task> listOfAllTasks(final int idProject) {
+    public List<Task> getAllTasks(final int idProject) {
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
         CriteriaQuery<Task> criteriaQuery = builder.createQuery(Task.class);
         Root<Task> task = criteriaQuery.from(Task.class);
@@ -68,7 +68,7 @@ public class ProjectDAO {
      * @param tasks List of all tasks for a employee.
      * @param category One of the category task's: "todo", "doing" or "done".
      */
-    public List<Task> listOfTasksByCategory(List<Task> tasks, final String category) {
+    public List<Task> getTasksByCategory(List<Task> tasks, final String category) {
         tasks.stream()
                 .filter(task -> category.equals(task.getCategory()))
                 .collect(Collectors.toList());
