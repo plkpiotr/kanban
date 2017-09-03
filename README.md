@@ -1,10 +1,10 @@
 # Kanban
 ## Description
-TODO
+[TODO]
 ## Technologies
-TODO
+[TODO]
 ## Features
-TODO
+[TODO]
 ## Software tools
 - IntelliJ IDEA 2017.2.2
 - PostgreSQL 9.6 [pgAdmin 4]
@@ -26,8 +26,8 @@ TODO
       - ConfigurationListener.java
       - InitializationListener.java
     - java/com/plkpiotr/kanban/servlets:
-      - AccountServlet
       - IndexServlet.java
+      - ProfileServlet.java
     - resources/META-INF:
       - persistence.xml
     - webapp:
@@ -38,16 +38,18 @@ TODO
       - js:
         - jquery-3.2.1.min.js [ready-made library]
       - WEB-INF:
+        - views:
+          - index.jsp
+          - profile.jsp
         - web.xml
-      - index.jsp
   - test:
-    - TODO
+    - [TODO]
 - pom.xml
 - .idea [ready-made files in .zip]
 - lib [ready-made files in .zip]
 ## How to run?
-TODO
+[TODO]
 ## Comments
-TODO
+[TODO]
 ## License
 Apache License 2.0 

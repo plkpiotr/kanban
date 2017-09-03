@@ -5,11 +5,6 @@ import com.plkpiotr.kanban.api.Task;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
-import javax.persistence.TypedQuery;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Path;
-import javax.persistence.criteria.Root;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -52,14 +47,10 @@ public class ProjectDAO {
      *
      * @param idProject ID project's.
      */
-    public List<Task> getAllTasks(final int idProject) {
-        CriteriaBuilder builder = entityManager.getCriteriaBuilder();
-        CriteriaQuery<Task> criteriaQuery = builder.createQuery(Task.class);
-        Root<Task> task = criteriaQuery.from(Task.class);
-        Path<Long> id = task.get("id_project");
-        criteriaQuery.select(task).where(builder.equal(id, idProject));
-        TypedQuery<Task> query = entityManager.createQuery(criteriaQuery);
-        return query.getResultList();
+    public List getAllTasks(final int idProject) {
+        return entityManager.createQuery("SELECT t from Task t WHERE t.project.id = :idProject")
+                .setParameter("idProject", idProject)
+                .getResultList();
     }
 
     /**

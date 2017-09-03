@@ -1,16 +1,9 @@
 package com.plkpiotr.kanban.dao;
 
 import com.plkpiotr.kanban.api.Company;
-import com.plkpiotr.kanban.api.Employee;
-import com.plkpiotr.kanban.api.Project;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
-import javax.persistence.TypedQuery;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Path;
-import javax.persistence.criteria.Root;
 import java.util.List;
 
 public class CompanyDAO {
@@ -49,14 +42,10 @@ public class CompanyDAO {
      *
      * @param idCompany ID company's.
      */
-    public List<Project> getProjects(final int idCompany) {
-        CriteriaBuilder builder = entityManager.getCriteriaBuilder();
-        CriteriaQuery<Project> criteriaQuery = builder.createQuery(Project.class);
-        Root<Project> project = criteriaQuery.from(Project.class);
-        Path<Long> id = project.get("id_company");
-        criteriaQuery.select(project).where(builder.equal(id, idCompany));
-        TypedQuery<Project> query = entityManager.createQuery(criteriaQuery);
-        return query.getResultList();
+    public List getProjects(final int idCompany) {
+        return entityManager.createQuery("SELECT p from Project p WHERE p.company.id = :idCompany")
+                .setParameter("idCompany", idCompany)
+                .getResultList();
     }
 
     /**
@@ -64,13 +53,9 @@ public class CompanyDAO {
      *
      * @param idCompany ID company's.
      */
-    public List<Employee> getEmployees(final int idCompany) {
-        CriteriaBuilder builder = entityManager.getCriteriaBuilder();
-        CriteriaQuery<Employee> criteriaQuery = builder.createQuery(Employee.class);
-        Root<Employee> employee = criteriaQuery.from(Employee.class);
-        Path<Long> id = employee.get("id_company");
-        criteriaQuery.select(employee).where(builder.equal(id, idCompany));
-        TypedQuery<Employee> query = entityManager.createQuery(criteriaQuery);
-        return query.getResultList();
+    public List getEmployees(final int idCompany) {
+        return entityManager.createQuery("SELECT e from Employee e WHERE e.company.id = :idCompany")
+                .setParameter("idCompany", idCompany)
+                .getResultList();
     }
 }

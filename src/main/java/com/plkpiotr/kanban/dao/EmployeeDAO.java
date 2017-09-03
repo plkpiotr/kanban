@@ -5,11 +5,6 @@ import com.plkpiotr.kanban.api.Task;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
-import javax.persistence.TypedQuery;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Path;
-import javax.persistence.criteria.Root;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -88,14 +83,10 @@ public class EmployeeDAO {
      *
      * @param idEmployee ID employee's.
      */
-    public List<Task> getAllTasks(int idEmployee) {
-        CriteriaBuilder builder = entityManager.getCriteriaBuilder();
-        CriteriaQuery<Task> criteriaQuery = builder.createQuery(Task.class);
-        Root<Task> task = criteriaQuery.from(Task.class);
-        Path<Long> id = task.get("id_employee");
-        criteriaQuery.select(task).where(builder.equal(id, idEmployee));
-        TypedQuery<Task> query = entityManager.createQuery(criteriaQuery);
-        return query.getResultList();
+    public List getTasks(final int idEmployee) {
+        return entityManager.createQuery("SELECT t from Task t WHERE t.employee.id = :idEmployee")
+                .setParameter("idEmployee", idEmployee)
+                .getResultList();
     }
 
     /**
