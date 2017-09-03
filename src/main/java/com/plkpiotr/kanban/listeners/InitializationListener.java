@@ -26,9 +26,9 @@ public class InitializationListener implements ServletRequestListener {
         EmployeeDAO employeeDAO = new EmployeeDAO(entityManager);
         ProjectDAO projectDAO = new ProjectDAO(entityManager);
         TaskDAO taskDAO = new TaskDAO(entityManager);
-        ServletRequest servletRequest = servletRequestEvent.getServletRequest();
-        servletRequest.setAttribute("initializedEmployeeDAO", employeeDAO);
-        servletRequest.setAttribute("initializedProjectDAO", projectDAO);
-        servletRequest.setAttribute("initializedTaskDAO", taskDAO);
+        ServletRequest request = servletRequestEvent.getServletRequest();
+        request.setAttribute("initEmployeeDAO", employeeDAO);
+        request.setAttribute("initProjectDAO", projectDAO);
+        request.setAttribute("initTaskDAO", taskDAO);
     }
 }

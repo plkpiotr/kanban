@@ -5,14 +5,33 @@
          id="WebApp_ID"
          version="3.0">
 
-  <display-name>Kanban</display-name>
+    <display-name>Kanban</display-name>
 
-  <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
-  </welcome-file-list>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
 
-  <!--<listener>-->
+    <!--<login-config>-->
+        <!--<auth-method>FORM</auth-method>-->
+        <!--<form-login-config>-->
+            <!--<form-login-page>login</form-login-page>-->
+            <!--<form-error-page>login</form-error-page>-->
+        <!--</form-login-config>-->
+    <!--</login-config>-->
+    <!---->
+    <!--<security-constraint>-->
+        <!--<web-resource-collection>-->
+            <!--<web-resource-name>rules</web-resource-name>-->
+            <!--<url-pattern>account</url-pattern>-->
+            <!--<url-pattern>project</url-pattern>-->
+            <!--<url-pattern>company</url-pattern>-->
+            <!--<http-method>GET</http-method>-->
+            <!--<http-method>POST</http-method>-->
+        <!--</web-resource-collection>-->
+    <!--</security-constraint>-->
+    
+    <!--<listener>-->
     <!--<listener-class>com.plkpiotr.kanban.DBConfig</listener-class>-->
-  <!--</listener>-->
+    <!--</listener>-->
 
 </web-app>
