@@ -1,5 +1,6 @@
 package com.plkpiotr.kanban.listeners;
 
+import com.plkpiotr.kanban.dao.CompanyDAO;
 import com.plkpiotr.kanban.dao.EmployeeDAO;
 import com.plkpiotr.kanban.dao.ProjectDAO;
 import com.plkpiotr.kanban.dao.TaskDAO;
@@ -23,10 +24,12 @@ public class InitializationListener implements ServletRequestListener {
 
     public void requestInitialized(ServletRequestEvent servletRequestEvent) {
         EntityManager entityManager = ConfigurationListener.createEntityManager();
+        CompanyDAO companyDAO = new CompanyDAO(entityManager);
         EmployeeDAO employeeDAO = new EmployeeDAO(entityManager);
         ProjectDAO projectDAO = new ProjectDAO(entityManager);
         TaskDAO taskDAO = new TaskDAO(entityManager);
         ServletRequest request = servletRequestEvent.getServletRequest();
+        request.setAttribute("initCompanyDAO", companyDAO);
         request.setAttribute("initEmployeeDAO", employeeDAO);
         request.setAttribute("initProjectDAO", projectDAO);
         request.setAttribute("initTaskDAO", taskDAO);

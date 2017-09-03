@@ -22,12 +22,21 @@
       - EmployeeDAO.java
       - ProjectDAO.java
       - TaskDAO.java
+    - java/com/plkpiotr/kanban/filters:
+      - LoggedOnFilter.java
     - java/com/plkpiotr/kanban/listeners:
       - ConfigurationListener.java
       - InitializationListener.java
     - java/com/plkpiotr/kanban/servlets:
+      - CompanyServlet.java
       - IndexServlet.java
+      - LogInServlet.java
+      - LogOutServlet.java
+      - NewProjectServlet.java
+      - NewTaskServlet.java
       - ProfileServlet.java
+      - ProjectServlet.java
+      - RegistrationServlet.java
     - resources/META-INF:
       - persistence.xml
     - webapp:
@@ -39,8 +48,14 @@
         - jquery-3.2.1.min.js [ready-made library]
       - WEB-INF:
         - views:
+          - company.jsp
           - index.jsp
+          - login.jsp
+          - newProject.jsp
+          - newTask.jsp
           - profile.jsp
+          - project.jsp
+          - registration.jsp
         - web.xml
   - test:
     - [TODO]
