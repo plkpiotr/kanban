@@ -26,6 +26,7 @@ TODO
       - ConfigurationListener.java
       - InitializationListener.java
     - java/com/plkpiotr/kanban/servlets:
+      - AccountServlet
       - IndexServlet.java
     - resources/META-INF:
       - persistence.xml
