@@ -83,7 +83,7 @@ public class EmployeeDAO {
      *
      * @param idEmployee ID employee's.
      */
-    public List getTasks(final int idEmployee) {
+    public List<Task> getAllTasks(final int idEmployee) {
         return entityManager.createQuery("SELECT t from Task t WHERE t.employee.id = :idEmployee")
                 .setParameter("idEmployee", idEmployee)
                 .getResultList();
@@ -96,9 +96,8 @@ public class EmployeeDAO {
      * @param category One of the category task's: "todo", "doing" or "done".
      */
     public List<Task> getTasksByCategory(List<Task> tasks, final String category) {
-        tasks.stream()
-                .filter(task -> category.equals(task.getCategory()))
+        return tasks.stream()
+                .filter(task -> category.contains(task.getCategory()))
                 .collect(Collectors.toList());
-        return tasks;
     }
 }

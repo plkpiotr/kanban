@@ -1,6 +1,8 @@
 package com.plkpiotr.kanban.dao;
 
 import com.plkpiotr.kanban.api.Company;
+import com.plkpiotr.kanban.api.Employee;
+import com.plkpiotr.kanban.api.Project;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -42,7 +44,7 @@ public class CompanyDAO {
      *
      * @param idCompany ID company's.
      */
-    public List getProjects(final int idCompany) {
+    public List<Project> getProjects(final int idCompany) {
         return entityManager.createQuery("SELECT p from Project p WHERE p.company.id = :idCompany")
                 .setParameter("idCompany", idCompany)
                 .getResultList();
@@ -53,7 +55,7 @@ public class CompanyDAO {
      *
      * @param idCompany ID company's.
      */
-    public List getEmployees(final int idCompany) {
+    public List<Employee> getEmployees(final int idCompany) {
         return entityManager.createQuery("SELECT e from Employee e WHERE e.company.id = :idCompany")
                 .setParameter("idCompany", idCompany)
                 .getResultList();

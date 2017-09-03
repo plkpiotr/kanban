@@ -47,7 +47,7 @@ public class ProjectDAO {
      *
      * @param idProject ID project's.
      */
-    public List getAllTasks(final int idProject) {
+    public List<Task> getAllTasks(final int idProject) {
         return entityManager.createQuery("SELECT t from Task t WHERE t.project.id = :idProject")
                 .setParameter("idProject", idProject)
                 .getResultList();
@@ -60,9 +60,8 @@ public class ProjectDAO {
      * @param category One of the category task's: "todo", "doing" or "done".
      */
     public List<Task> getTasksByCategory(List<Task> tasks, final String category) {
-        tasks.stream()
+        return tasks.stream()
                 .filter(task -> category.equals(task.getCategory()))
                 .collect(Collectors.toList());
-        return tasks;
     }
 }

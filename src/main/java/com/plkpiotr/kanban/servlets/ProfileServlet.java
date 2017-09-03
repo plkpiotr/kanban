@@ -22,8 +22,17 @@ public class ProfileServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         EmployeeDAO employeeDAO = (EmployeeDAO) request.getAttribute("initEmployeeDAO");
-        List<Task> allTasks = employeeDAO.getTasks(1); // default id - TODO
-        request.setAttribute("allTasks", allTasks);
-        request.getRequestDispatcher("/WEB-INF/views/profile.jsp").forward(request, response);
+        List<Task> allTasks = employeeDAO.getAllTasks(1); // to modify!
+
+        List<Task> todoTasks = employeeDAO.getTasksByCategory(allTasks, "todo");
+        request.setAttribute("todoTasks", todoTasks);
+
+        List<Task> doingTasks = employeeDAO.getTasksByCategory(allTasks, "doing");
+        request.setAttribute("doingTasks", doingTasks);
+
+        List<Task> doneTasks = employeeDAO.getTasksByCategory(allTasks, "done");
+        request.setAttribute("doneTasks", doneTasks);
+
+        //request.getRequestDispatcher("/WEB-INF/views/profile.jsp").forward(request, response);
     }
 }
