@@ -34,7 +34,7 @@ public class EmployeeDAO {
      */
     public boolean insertEmployee(Employee employee) {
         EntityTransaction entityTransaction = entityManager.getTransaction();
-        employee.setPassword(this.encodePassword(employee.getPassword()));
+        // employee.setPassword(this.encodePassword(employee.getPassword()));
         try {
             entityTransaction.begin();
             entityManager.persist(employee);

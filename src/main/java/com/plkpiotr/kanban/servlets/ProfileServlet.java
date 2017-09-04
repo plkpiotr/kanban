@@ -21,7 +21,7 @@ public class ProfileServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        EmployeeDAO employeeDAO = (EmployeeDAO) request.getAttribute("initEmployeeDAO");
+        EmployeeDAO employeeDAO = (EmployeeDAO) request.getAttribute("employeeDAO");
         List<Task> allTasks = employeeDAO.getAllTasks(1); // to modify!
 
         List<Task> todoTasks = employeeDAO.getTasksByCategory(allTasks, "todo");

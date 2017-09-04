@@ -22,7 +22,6 @@ public class RegistrationServlet extends HttpServlet {
         String surname = request.getParameter("surname");
         String nick = request.getParameter("nick");
         String password = request.getParameter("password");
-        String confirmed = request.getParameter("confirmed");
         String sex = request.getParameter("sex");
         String avatar = request.getParameter("avatar");
         String companyName = request.getParameter("company");
@@ -43,18 +42,18 @@ public class RegistrationServlet extends HttpServlet {
             employee.setSex(sex);
             employee.setAvatar(avatar);
             if (employeeDAO.getCompany(companyName) == null) {
-                CompanyDAO companyDAO = (CompanyDAO) request.getAttribute("employeeDAO");
+                CompanyDAO companyDAO = (CompanyDAO) request.getAttribute("companyDAO");
                 Company company = new Company();
                 company.setName(companyName);
                 companyDAO.insertCompany(company);
-            } else
-                employee.setCompany(employeeDAO.getCompany(companyName));
+            }
+            employee.setCompany(employeeDAO.getCompany(companyName));
             if (employeeDAO.insertEmployee(employee)) {
                 request.setAttribute("info", "Congratulations! You have just joined in the Kanban Community.");
                 doGet(request, response);
             } else {
                 request.setAttribute("info", "Registration failed.");
-                doGet(request, response);
+                // doGet(request, response);
             }
         }
     }

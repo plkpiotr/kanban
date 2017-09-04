@@ -31,7 +31,7 @@
             <http-method>POST</http-method>
         </web-resource-collection>
     </security-constraint>
-    
+
     <!--<listener>-->
     <!--<listener-class>com.plkpiotr.kanban.DBConfig</listener-class>-->
     <!--</listener>-->

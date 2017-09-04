@@ -18,7 +18,7 @@
 </head>
 <body>
     <h1>Login</h1>
-    <form method="post" action="j_security_check" >
+    <form method="post" action="j_security_check">
         <p>Nick:</p>
         <label>
             <input name="j_username">
@@ -29,6 +29,7 @@
         </label><br>
         <input type="submit" value="Login"><br>
     </form>
+    <a href="index">Index</a><br>
     <a href="registration">Registration</a>
 </body>
 </html>
