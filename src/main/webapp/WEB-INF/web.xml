@@ -11,14 +11,14 @@
         <welcome-file>/WEB-INF/views/index.jsp</welcome-file>
     </welcome-file-list>
 
-    <!--<login-config>-->
-        <!--<auth-method>FORM</auth-method>-->
-        <!--<form-login-config>-->
-            <!--<form-login-page>login</form-login-page>-->
-            <!--<form-error-page>login</form-error-page>-->
-        <!--</form-login-config>-->
-    <!--</login-config>-->
-    <!---->
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/login</form-login-page>
+            <form-error-page>/login</form-error-page>
+        </form-login-config>
+    </login-config>
+
     <!--<security-constraint>-->
         <!--<web-resource-collection>-->
             <!--<web-resource-name>rules</web-resource-name>-->

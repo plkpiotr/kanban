@@ -33,6 +33,10 @@ public class ProfileServlet extends HttpServlet {
         List<Task> doneTasks = employeeDAO.getTasksByCategory(allTasks, "done");
         request.setAttribute("doneTasks", doneTasks);
 
+        response.getWriter().println(todoTasks);
+        response.getWriter().println(doingTasks);
+        response.getWriter().println(doneTasks);
+
         //request.getRequestDispatcher("/WEB-INF/views/profile.jsp").forward(request, response);
     }
 }

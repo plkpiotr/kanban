@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
@@ -11,7 +11,10 @@
     <title>Registration | Kanban</title>
 
     <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <link rel="icon" href="../../img/post-it.png">
+
+    <script src="../../js/bootstrap.min.js"></script>
 </head>
 <body>
 

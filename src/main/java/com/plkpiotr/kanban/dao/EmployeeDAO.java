@@ -97,7 +97,7 @@ public class EmployeeDAO {
      */
     public List<Task> getTasksByCategory(List<Task> tasks, final String category) {
         return tasks.stream()
-                .filter(task -> category.contains(task.getCategory()))
+                .filter(task -> category.equals(task.getCategory()))
                 .collect(Collectors.toList());
     }
 }
