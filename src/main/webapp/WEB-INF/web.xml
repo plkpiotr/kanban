@@ -19,16 +19,19 @@
         </form-login-config>
     </login-config>
 
-    <!--<security-constraint>-->
-        <!--<web-resource-collection>-->
-            <!--<web-resource-name>rules</web-resource-name>-->
-            <!--<url-pattern>account</url-pattern>-->
-            <!--<url-pattern>project</url-pattern>-->
-            <!--<url-pattern>company</url-pattern>-->
-            <!--<http-method>GET</http-method>-->
-            <!--<http-method>POST</http-method>-->
-        <!--</web-resource-collection>-->
-    <!--</security-constraint>-->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>rules</web-resource-name>
+            <url-pattern>/company</url-pattern>
+            <url-pattern>/login</url-pattern>
+            <url-pattern>/newProject</url-pattern>
+            <url-pattern>/newTask</url-pattern>
+            <url-pattern>/profile</url-pattern>
+            <url-pattern>/project</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+    </security-constraint>
     
     <!--<listener>-->
     <!--<listener-class>com.plkpiotr.kanban.DBConfig</listener-class>-->

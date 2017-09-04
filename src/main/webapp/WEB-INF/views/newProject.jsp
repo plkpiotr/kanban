@@ -5,7 +5,7 @@
     <meta name="description" content="Kanban board implemented in Java EE, Hibernate and JPA - newProject">
     <meta name="keywords" content="kanban, java, ee, hibernate, jpa, jpql, criteria api, maven, tomcat, postgresql">
     <meta name="author" content="Piotr Pałka">
-    <%--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">--%>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>New project | Kanban</title>
