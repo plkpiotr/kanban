@@ -1,5 +1,8 @@
 package com.plkpiotr.kanban.filters;
 
+import com.plkpiotr.kanban.api.Employee;
+import com.plkpiotr.kanban.dao.EmployeeDAO;
+
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
@@ -10,13 +13,22 @@ import java.io.IOException;
 public class LoggedOnFilter implements Filter {
 
     public void destroy() {
+
     }
 
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) resp;
-        req.setCharacterEncoding("UTF-8");
-        // TODO
+        String nick = request.getRemoteUser();
+        if (nick != null) {
+            Employee employee = (Employee) request.getSession().getAttribute("employee");
+            if (employee == null) {
+                EmployeeDAO employeeDAO = (EmployeeDAO) request.getAttribute("employeeDAO");
+                employee = employeeDAO.getEmployee(nick);
+                request.getSession().setAttribute("employee", employee);
+            }
+        }
         chain.doFilter(req, resp);
     }
 

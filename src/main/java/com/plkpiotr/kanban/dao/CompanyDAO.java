@@ -25,17 +25,15 @@ public class CompanyDAO {
      *
      * @param company Company object waiting for inserting to database.
      */
-    public boolean insertEmployee(Company company) {
+    public void insertCompany(Company company) {
         EntityTransaction entityTransaction = entityManager.getTransaction();
         try {
             entityTransaction.begin();
             entityManager.persist(company);
             entityTransaction.commit();
-            return true;
         } catch (Exception e) {
             entityTransaction.rollback();
             e.printStackTrace();
-            return false;
         }
     }
 

@@ -41,10 +41,12 @@
       - persistence.xml
     - webapp:
       - css:
+        - bootstrap.min.css [ready-made library]
         - style.css
       - img:
         - icon, background and avatars [PNG files]
       - js:
+        - bootstrap.min.js [ready-made library]
         - jquery-3.2.1.min.js [ready-made library]
       - WEB-INF:
         - views:

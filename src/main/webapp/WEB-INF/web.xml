@@ -23,7 +23,6 @@
         <web-resource-collection>
             <web-resource-name>rules</web-resource-name>
             <url-pattern>/company</url-pattern>
-            <url-pattern>/login</url-pattern>
             <url-pattern>/newProject</url-pattern>
             <url-pattern>/newTask</url-pattern>
             <url-pattern>/profile</url-pattern>

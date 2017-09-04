@@ -1,5 +1,6 @@
 package com.plkpiotr.kanban.dao;
 
+import com.plkpiotr.kanban.api.Company;
 import com.plkpiotr.kanban.api.Employee;
 import com.plkpiotr.kanban.api.Task;
 
@@ -99,5 +100,16 @@ public class EmployeeDAO {
         return tasks.stream()
                 .filter(task -> category.equals(task.getCategory()))
                 .collect(Collectors.toList());
+    }
+
+    /**
+     * Gets company by name.
+     *
+     * @param name ID company's.
+     */
+    public Company getCompany(final String name) {
+        return (Company) entityManager.createQuery("SELECT c from Company c WHERE c.name = :name")
+                .setParameter("name", name)
+                .getSingleResult();
     }
 }
