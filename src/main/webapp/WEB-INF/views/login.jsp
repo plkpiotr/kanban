@@ -21,13 +21,13 @@
     <form method="post" action="j_security_check">
         <p>Nick:</p>
         <label>
-            <input name="j_username">
+            <input name="j_username" class="form-control">
         </label><br>
         <p>Password:</p>
         <label>
-            <input type="password" name="j_password">
+            <input type="password" name="j_password" class="form-control">
         </label><br>
-        <input type="submit" value="Login"><br>
+        <input type="submit" value="Login" class="btn btn-info"><br>
     </form>
     <a href="index">Index</a><br>
     <a href="registration">Registration</a>
