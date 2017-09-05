@@ -1,6 +1,6 @@
 package com.plkpiotr.kanban.servlets;
 
-import com.plkpiotr.kanban.api.Task;
+import com.plkpiotr.kanban.domain.Task;
 import com.plkpiotr.kanban.dao.EmployeeDAO;
 
 import javax.servlet.ServletException;

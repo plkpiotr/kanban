@@ -1,8 +1,8 @@
 package com.plkpiotr.kanban.dao;
 
-import com.plkpiotr.kanban.api.Company;
-import com.plkpiotr.kanban.api.Employee;
-import com.plkpiotr.kanban.api.Project;
+import com.plkpiotr.kanban.domain.Company;
+import com.plkpiotr.kanban.domain.Employee;
+import com.plkpiotr.kanban.domain.Project;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;

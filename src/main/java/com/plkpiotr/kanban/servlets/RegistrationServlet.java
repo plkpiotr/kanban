@@ -1,7 +1,7 @@
 package com.plkpiotr.kanban.servlets;
 
-import com.plkpiotr.kanban.api.Company;
-import com.plkpiotr.kanban.api.Employee;
+import com.plkpiotr.kanban.domain.Company;
+import com.plkpiotr.kanban.domain.Employee;
 import com.plkpiotr.kanban.dao.CompanyDAO;
 import com.plkpiotr.kanban.dao.EmployeeDAO;
 

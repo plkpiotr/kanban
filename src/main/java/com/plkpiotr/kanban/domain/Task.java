@@ -1,4 +1,4 @@
-package com.plkpiotr.kanban.api;
+package com.plkpiotr.kanban.domain;
 
 import javax.persistence.*;
 

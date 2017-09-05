@@ -5,10 +5,10 @@
 
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-        <class>com.plkpiotr.kanban.api.Company</class>
-        <class>com.plkpiotr.kanban.api.Employee</class>
-        <class>com.plkpiotr.kanban.api.Project</class>
-        <class>com.plkpiotr.kanban.api.Task</class>
+        <class>com.plkpiotr.kanban.domain.Company</class>
+        <class>com.plkpiotr.kanban.domain.Employee</class>
+        <class>com.plkpiotr.kanban.domain.Project</class>
+        <class>com.plkpiotr.kanban.domain.Task</class>
 
         <properties>
             <property name="hibernate.connection.url"
