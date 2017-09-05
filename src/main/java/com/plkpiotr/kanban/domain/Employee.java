@@ -28,9 +28,6 @@ public class Employee  {
     @Column(nullable = false, length = 64)
     private String password;
 
-    @Column(nullable = false, length = 5)
-    private String sex;
-
     @Column(nullable = false, length = 15)
     private String avatar;
 
@@ -82,14 +79,6 @@ public class Employee  {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
     }
 
     public String getAvatar() {

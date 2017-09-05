@@ -13,7 +13,7 @@ public class ProfileServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
+        request.setCharacterEncoding("UTF-8");
     }
 
     @Override
@@ -22,7 +22,7 @@ public class ProfileServlet extends HttpServlet {
         if (session.getAttribute("employee") == null) {
             response.sendRedirect(request.getContextPath() + "/login");
         } else {
-
+            request.setCharacterEncoding("UTF-8");
             // EmployeeDAO employeeDAO = (EmployeeDAO) request.getAttribute("employeeDAO");
             // Employee employee = (Employee) request.getAttribute("employee");
 

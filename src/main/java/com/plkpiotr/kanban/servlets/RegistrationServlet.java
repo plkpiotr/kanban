@@ -18,11 +18,11 @@ public class RegistrationServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         String name = request.getParameter("name");
         String surname = request.getParameter("surname");
         String nick = request.getParameter("nick");
         String password = request.getParameter("password");
-        String sex = request.getParameter("sex");
         String avatar = request.getParameter("avatar");
         String companyName = request.getParameter("company");
         EmployeeDAO employeeDAO = (EmployeeDAO) request.getAttribute("employeeDAO");
@@ -39,7 +39,6 @@ public class RegistrationServlet extends HttpServlet {
             employee.setSurname(surname);
             employee.setNick(nick);
             employee.setPassword(password);
-            employee.setSex(sex);
             employee.setAvatar(avatar);
             if (employeeDAO.getCompany(companyName) == null) {
                 CompanyDAO companyDAO = (CompanyDAO) request.getAttribute("companyDAO");
@@ -60,6 +59,7 @@ public class RegistrationServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         request.getRequestDispatcher("/WEB-INF/views/registration.jsp").forward(request, response);
     }
 }

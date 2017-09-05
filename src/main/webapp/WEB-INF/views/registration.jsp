@@ -41,10 +41,6 @@
         <label>
             <input name="avatar" maxlength="10">
         </label>
-        <p>Sex:</p>
-        <label>
-            <input name="sex" maxlength="10">
-        </label>
         <p>Company:</p>
         <label>
             <input name="company" maxlength="15">
