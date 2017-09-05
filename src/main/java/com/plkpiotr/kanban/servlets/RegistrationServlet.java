@@ -30,8 +30,8 @@ public class RegistrationServlet extends HttpServlet {
         // TODO: Data validation in JS/Query
 
         try {
-            employeeDAO.getEmployee(nick);
-            request.setAttribute("info", "Nick: " + nick + " already exist.");
+            employeeDAO.getEmployeeByNick(nick);
+            request.setAttribute("infoRegistration", "Nick: " + nick + " already exist.");
             doGet(request, response);
         } catch (NoResultException e) {
             Employee employee = new Employee();
@@ -49,10 +49,10 @@ public class RegistrationServlet extends HttpServlet {
             }
             employee.setCompany(employeeDAO.getCompany(companyName));
             if (employeeDAO.insertEmployee(employee)) {
-                request.setAttribute("info", "Congratulations! You have just joined in the Kanban Community.");
+                request.setAttribute("infoRegistration", "Congratulations! You have just joined in the Kanban Community.");
                 doGet(request, response);
             } else {
-                request.setAttribute("info", "Registration failed.");
+                request.setAttribute("infoRegistration", "Registration failed.");
                 // doGet(request, response);
             }
         }

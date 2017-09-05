@@ -1,6 +1,7 @@
 package com.plkpiotr.kanban.servlets;
 
 import com.plkpiotr.kanban.dao.EmployeeDAO;
+import com.plkpiotr.kanban.domain.Employee;
 
 import javax.persistence.NoResultException;
 import javax.servlet.ServletException;
@@ -19,9 +20,12 @@ public class LogInServlet extends HttpServlet {
         String password = request.getParameter("password");
         EmployeeDAO employeeDAO = (EmployeeDAO) request.getAttribute("employeeDAO");
         try {
-            // TODO
+            Employee employee = employeeDAO.getEmployeeByNickAndPassword(nick, password);
+            request.setAttribute("employee", employee);
+            request.getRequestDispatcher("/profile").forward(request, response);
         } catch (NoResultException e) {
-            // TODO
+            request.setAttribute("infoLogin", "Data in login form was invalid");
+            doGet(request, response);
         }
     }
 

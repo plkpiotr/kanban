@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
@@ -17,8 +17,7 @@
     <script src="../../js/bootstrap.min.js"></script>
 </head>
 <body>
-    <p>Hello World!</p>
-    <div>Icon website's made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those
+   <div>Icon website's made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those
         Icons</a> from <a
             href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a
             href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>

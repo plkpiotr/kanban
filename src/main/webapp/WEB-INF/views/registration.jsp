@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
@@ -19,7 +19,7 @@
 </head>
 <body>
     <h2>Registration</h2>
-    ${info}
+    ${infoRegistration}
     <form method="post">
         <p>Name:</p>
         <label>
@@ -47,7 +47,7 @@
         </label>
         <p>Company:</p>
         <label>
-            <input name="company" maxlength="10">
+            <input name="company" maxlength="15">
         </label>
         <input type="submit" value="Register">
     </form>

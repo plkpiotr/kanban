@@ -73,9 +73,23 @@ public class EmployeeDAO {
      *
      * @param nick Nick employee's.
      */
-    public Employee getEmployee(final String nick) {
+    public Employee getEmployeeByNick(final String nick) {
         return (Employee) entityManager.createQuery("SELECT e from Employee e WHERE e.nick = :nick")
                 .setParameter("nick", nick)
+                .getSingleResult();
+    }
+
+    /**
+     * Gets employee by nick.
+     *
+     * @param nick Nick employee's.
+     * @param password Nick employee's.
+     */
+    public Employee getEmployeeByNickAndPassword(final String nick, final String password) {
+        return (Employee) entityManager.createQuery("SELECT e from Employee e WHERE e.nick = :nick AND e.password = " +
+                ":password")
+                .setParameter("nick", nick)
+                .setParameter("password", password)
                 .getSingleResult();
     }
 

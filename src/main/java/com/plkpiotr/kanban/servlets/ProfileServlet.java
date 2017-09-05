@@ -1,7 +1,7 @@
 package com.plkpiotr.kanban.servlets;
 
-import com.plkpiotr.kanban.domain.Task;
 import com.plkpiotr.kanban.dao.EmployeeDAO;
+import com.plkpiotr.kanban.domain.Employee;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet("/profile")
 public class ProfileServlet extends HttpServlet {
@@ -22,21 +21,8 @@ public class ProfileServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         EmployeeDAO employeeDAO = (EmployeeDAO) request.getAttribute("employeeDAO");
-        List<Task> allTasks = employeeDAO.getAllTasks(1); // to modify!
+        Employee employee = (Employee) request.getAttribute("employee");
 
-        List<Task> todoTasks = employeeDAO.getTasksByCategory(allTasks, "todo");
-        request.setAttribute("todoTasks", todoTasks);
-
-        List<Task> doingTasks = employeeDAO.getTasksByCategory(allTasks, "doing");
-        request.setAttribute("doingTasks", doingTasks);
-
-        List<Task> doneTasks = employeeDAO.getTasksByCategory(allTasks, "done");
-        request.setAttribute("doneTasks", doneTasks);
-
-        response.getWriter().println(todoTasks);
-        response.getWriter().println(doingTasks);
-        response.getWriter().println(doneTasks);
-
-        //request.getRequestDispatcher("/WEB-INF/views/profile.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/profile.jsp").forward(request, response);
     }
 }
