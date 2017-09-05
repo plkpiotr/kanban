@@ -19,5 +19,6 @@
 <body>
     ${employee.name}
     ${employee.surname}
+    <a href="company">Company</a>
 </body>
 </html>

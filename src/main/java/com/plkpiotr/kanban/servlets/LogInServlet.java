@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet("/login")
@@ -21,7 +22,8 @@ public class LogInServlet extends HttpServlet {
         EmployeeDAO employeeDAO = (EmployeeDAO) request.getAttribute("employeeDAO");
         try {
             Employee employee = employeeDAO.getEmployeeByNickAndPassword(nick, password);
-            request.setAttribute("employee", employee);
+            HttpSession session = request.getSession();
+            session.setAttribute("employee", employee);
             request.getRequestDispatcher("/profile").forward(request, response);
         } catch (NoResultException e) {
             request.setAttribute("infoLogin", "Data in login form was invalid");

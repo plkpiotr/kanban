@@ -17,6 +17,8 @@
     <script src="../../js/bootstrap.min.js"></script>
 </head>
 <body>
-
+    ${employee.nick}
+    <a href="profile">Profile</a>
+    <a href="logout">Logout</a>
 </body>
 </html>
