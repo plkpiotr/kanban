@@ -1,3 +1,92 @@
 body {
-    background-image: url("../img/lined_paper.png");
+    background-image: url("../img/diamond_upholstery.png");
+}
+
+.col-xs-12,
+.col-md-3,
+.col-md-9 {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.col-xs-12 figure img,
+.col-md-3 figure img {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.navbar-text, h3, h4 {
+    cursor: default;
+    margin-bottom: 0;
+    /*font-weight: 400;*/
+}
+
+h2 {
+    cursor: default;
+}
+
+.row {
+    padding: 20px;
+}
+
+.progress {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 70%;
+}
+
+.media {
+    max-width: 17%;
+    padding: 1%;
+    margin: 1%;
+    display: inline-block;
+}
+
+.media-heading {
+    display: block;
+}
+
+.media-heading a {
+    color: #000000;
+}
+
+.media-heading a:hover {
+    text-decoration: none;
+}
+
+.media-object {
+    height: 64px;
+    width: 64px;
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+    .col-xs-12 figure img{
+        width: 50%;
+    }
+
+    .media {
+        max-width: 30%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-text,
+    .navbar-header,
+    .navbar-nav {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .col-xs-12 figure img{
+        width: 60%;
+    }
+
+    .media {
+        max-width: 45%;
+    }
 }
