@@ -41,12 +41,12 @@ public class Employee  {
     @JoinColumn(name = "id_company")
     private Company company;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public Integer getId() {
         return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {

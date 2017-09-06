@@ -98,7 +98,7 @@ public class EmployeeDAO {
      *
      * @param idEmployee ID employee's.
      */
-    public List<Task> getAllTasks(final int idEmployee) {
+    public List getAllTasks(final Integer idEmployee) {
         return entityManager.createQuery("SELECT t from Task t WHERE t.employee.id = :idEmployee")
                 .setParameter("idEmployee", idEmployee)
                 .getResultList();

@@ -25,7 +25,8 @@ public class LogInServlet extends HttpServlet {
             Employee employee = employeeDAO.getEmployeeByNickAndPassword(nick, password);
             HttpSession session = request.getSession();
             session.setAttribute("employee", employee);
-            request.getRequestDispatcher("/profile").forward(request, response);
+
+            response.sendRedirect(request.getContextPath() + "/profile");
         } catch (NoResultException e) {
             request.setAttribute("infoLogin", "Data in login form was invalid");
             doGet(request, response);
