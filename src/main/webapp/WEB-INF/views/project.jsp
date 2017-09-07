@@ -37,78 +37,77 @@
         </div>
     </nav>
 
-    <article class="container">
-        <header class="row">
-            <div class="col-xs-12">
-                <h1>${project.getName()}</h1>
-                <h3>${project.getDescription()}</h3>
-            </div>
-        </header>
-        <section class="row">
-            <div class="col-xs-12">
-                <a href="#todo">
-                    <button class="btn btn-warning" type="button">
-                        To do: <span class="badge">${todoTasks.size()}</span>
-                    </button>
-                </a>
-                <a href="#doing">
-                    <button class="btn btn-success" type="button">
-                        Doing: <span class="badge">${doingTasks.size()}</span>
-                    </button>
-                </a>
-                <a href="#done">
-                    <button class="btn btn-info" type="button">
-                        Done: <span class="badge">${doneTasks.size()}</span>
-                    </button>
-                </a>
-            </div>
-        </section>
-        <section class="row">
-            <div class="col-xs-12">
-                <h2 id="todo">To do:</h2>
-                <c:forEach items="${todoTasks}" var="task">
-                    <div class="media" style="background-color: #f2b968; min-height: 175px">
-                        <img src="../../img/${task.getEmployee().getAvatar()}" alt="Avatar">
-                        <h4>${task.getEmployee().getName()}
-                                ${task.getEmployee().getSurname().charAt(0)}.</h4>
-                        <p>${task.getContent()}</p>
-                    </div>
-                </c:forEach>
-            </div>
-        </section>
-        <section class="row">
-            <div class="col-xs-12">
-                <h2 id="doing">Doing:</h2>
-                <c:forEach items="${doingTasks}" var="task">
-                    <div class="media" style="background-color: #74c374; min-height: 175px">
-                        <div class="media-body">
+    <main>
+        <article class="container">
+            <header class="row">
+                <div class="col-xs-12">
+                    <h1>${project.getName()}</h1>
+                    <h3>${project.getDescription()}</h3>
+                </div>
+            </header>
+            <section class="row">
+                <div class="col-xs-12">
+                    <a href="#todo">
+                        <button class="btn btn-warning" type="button">
+                            To do: <span class="badge">${todoTasks.size()}</span>
+                        </button>
+                    </a>
+                    <a href="#doing">
+                        <button class="btn btn-success" type="button">
+                            Doing: <span class="badge">${doingTasks.size()}</span>
+                        </button>
+                    </a>
+                    <a href="#done">
+                        <button class="btn btn-info" type="button">
+                            Done: <span class="badge">${doneTasks.size()}</span>
+                        </button>
+                    </a>
+                </div>
+            </section>
+            <section class="row">
+                <div class="col-xs-12">
+                    <h2 id="todo">To do:</h2>
+                    <c:forEach items="${todoTasks}" var="task">
+                        <div class="media" style="background-color: #f2b968; min-height: 175px">
                             <img src="../../img/${task.getEmployee().getAvatar()}" alt="Avatar">
-                            <h4>${task.getEmployee().getName()}
-                                    ${task.getEmployee().getSurname().charAt(0)}.</h4>
+                            <h4>${task.getEmployee().getName()}${task.getEmployee().getSurname().charAt(0)}.</h4>
                             <p>${task.getContent()}</p>
                         </div>
-                    </div>
-                </c:forEach>
-            </div>
-        </section>
-        <div class="row">
-            <div class="col-xs-12">
-                <h2 id="done">Done:</h2>
-                <c:forEach items="${doneTasks}" var="task">
-                    <div class="media" style="background-color: #73c9e3; min-height: 175px">
-                        <div class="media-body">
+                    </c:forEach>
+                </div>
+            </section>
+            <section class="row">
+                <div class="col-xs-12">
+                    <h2 id="doing">Doing:</h2>
+                    <c:forEach items="${doingTasks}" var="task">
+                        <div class="media" style="background-color: #74c374; min-height: 175px">
                             <div class="media-body">
                                 <img src="../../img/${task.getEmployee().getAvatar()}" alt="Avatar">
-                                <h4>${task.getEmployee().getName()}
-                                        ${task.getEmployee().getSurname().charAt(0)}.</h4>
+                                <h4>${task.getEmployee().getName()}${task.getEmployee().getSurname().charAt(0)}.</h4>
                                 <p>${task.getContent()}</p>
                             </div>
                         </div>
-                    </div>
-                </c:forEach>
+                    </c:forEach>
+                </div>
+            </section>
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2 id="done">Done:</h2>
+                    <c:forEach items="${doneTasks}" var="task">
+                        <div class="media" style="background-color: #73c9e3; min-height: 175px">
+                            <div class="media-body">
+                                <div class="media-body">
+                                    <img src="../../img/${task.getEmployee().getAvatar()}" alt="Avatar">
+                                    <h4>${task.getEmployee().getName()}${task.getEmployee().getSurname().charAt(0)}.</h4>
+                                    <p>${task.getContent()}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </c:forEach>
+                </div>
             </div>
-        </div>
-    </article>
+        </article>
+    </main>
     <footer class="navbar navbar-default navbar-static-top" style="margin-bottom: 0; margin-top: 2%;">
         <div class="container">
             <p class="navbar-text navbar-center">

@@ -36,42 +36,58 @@
             </ul>
         </div>
     </nav>
-
-    <article class="container">
-        <header class="row">
-            <header class="col-xs-12 col-md-3">
-                <figure>
-                    <img src="../../img/${employee.getAvatar()}" alt="Avatar">
-                    <figcaption>
-                        <h3>${id} ${employee.getName()} ${employee.getSurname()}</h3>
-                    </figcaption>
-                </figure>
+    <main>
+        <article class="container">
+            <header class="row">
+                <header class="col-xs-12 col-md-3">
+                    <figure>
+                        <img src="../../img/${employee.getAvatar()}" alt="Avatar">
+                        <figcaption>
+                            <h3>${id} ${employee.getName()} ${employee.getSurname()}</h3>
+                        </figcaption>
+                    </figure>
+                </header>
+                <div class="col-xs-12 col-md-9">
+                    <h2 style="margin-bottom: 2%;">Your tasks:</h2>
+                    <h4>To do: </h4>
+                    <div class="progress progress-striped">
+                        <div class="progress-bar progress-bar-warning" style="width: ${todoPercent}%">${todoTasks.size()}/
+                            ${allTasks.size()}</div>
+                    </div>
+                    <h4>Doing: </h4>
+                    <div class="progress progress-striped">
+                        <div class="progress-bar progress-bar-success" style="width: ${doingPercent}%">${doingTasks.size()}/
+                            ${allTasks.size()}</div>
+                    </div>
+                    <h4>Done: </h4>
+                    <div class="progress progress-striped">
+                        <div class="progress-bar progress-bar-info" style="width: ${donePercent}%">${doneTasks.size()}/
+                            ${allTasks.size()}</div>
+                    </div>
+                </div>
             </header>
-            <div class="col-xs-12 col-md-9">
-                <h2 style="margin-bottom: 2%;">Your tasks:</h2>
-                <h4>To do: </h4>
-                <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-warning" style="width: ${todoPercent}%">${todoTasks.size()}/
-                        ${allTasks.size()}</div>
+            <section class="row">
+                <div class="col-xs-12">
+                    <h1>To do:</h1>
+                    <c:forEach items="${todoTasks}" var="task">
+                        <div class="media" style="background-color: #f2b968">
+                            <div class="media-body">
+                                <div class="media-body">
+                                    <h4 class="media-heading">
+                                        <a href="project?idProject=${task.getProject().getId()}">${task.getProject().getName()}</a>
+                                    </h4>
+                                    ${task.getContent()}
+                                </div>
+                            </div>
+                        </div>
+                    </c:forEach>
                 </div>
-                <h4>Doing: </h4>
-                <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-success" style="width: ${doingPercent}%">${doingTasks.size()}/
-                        ${allTasks.size()}</div>
-                </div>
-                <h4>Done: </h4>
-                <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-info" style="width: ${donePercent}%">${doneTasks.size()}/
-                        ${allTasks.size()}</div>
-                </div>
-            </div>
-        </header>
-        <section class="row">
-            <div class="col-xs-12">
-                <h1>To do:</h1>
-                <c:forEach items="${todoTasks}" var="task">
-                    <div class="media" style="background-color: #f2b968">
-                        <div class="media-body">
+            </section>
+            <section class="row">
+                <div class="col-xs-12">
+                    <h1>Doing:</h1>
+                    <c:forEach items="${doingTasks}" var="task">
+                        <div class="media" style="background-color: #74c374">
                             <div class="media-body">
                                 <h4 class="media-heading">
                                     <a href="project?idProject=${task.getProject().getId()}">${task.getProject().getName()}</a>
@@ -79,43 +95,28 @@
                                 ${task.getContent()}
                             </div>
                         </div>
-                    </div>
-                </c:forEach>
-            </div>
-        </section>
-        <section class="row">
-            <div class="col-xs-12">
-                <h1>Doing:</h1>
-                <c:forEach items="${doingTasks}" var="task">
-                    <div class="media" style="background-color: #74c374">
-                        <div class="media-body">
-                            <h4 class="media-heading">
-                                <a href="project?idProject=${task.getProject().getId()}">${task.getProject().getName()}</a>
-                            </h4>
-                            ${task.getContent()}
-                        </div>
-                    </div>
-                </c:forEach>
-            </div>
-        </section>
-        <section class="row">
-            <div class="col-xs-12">
-                <h1>Done:</h1>
-                <c:forEach items="${doneTasks}" var="task">
-                    <div class="media" style="background-color: #73c9e3">
-                        <div class="media-body">
+                    </c:forEach>
+                </div>
+            </section>
+            <section class="row">
+                <div class="col-xs-12">
+                    <h1>Done:</h1>
+                    <c:forEach items="${doneTasks}" var="task">
+                        <div class="media" style="background-color: #73c9e3">
                             <div class="media-body">
-                                <h4 class="media-heading">
-                                    <a href="project?idProject=${task.getProject().getId()}">${task.getProject().getName()}</a>
-                                </h4>
-                                ${task.getContent()}
+                                <div class="media-body">
+                                    <h4 class="media-heading">
+                                        <a href="project?idProject=${task.getProject().getId()}">${task.getProject().getName()}</a>
+                                    </h4>
+                                    ${task.getContent()}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </c:forEach>
-            </div>
-        </section>
-    </article>
+                    </c:forEach>
+                </div>
+            </section>
+        </article>
+    </main>
     <footer class="navbar navbar-default navbar-static-top" style="margin-bottom: 0; margin-top: 2%;">
         <div class="container">
             <p class="navbar-text navbar-center">
