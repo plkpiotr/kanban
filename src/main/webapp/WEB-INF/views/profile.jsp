@@ -37,16 +37,16 @@
         </div>
     </nav>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-3">
+    <article class="container">
+        <header class="row">
+            <header class="col-xs-12 col-md-3">
                 <figure>
                     <img src="../../img/${employee.getAvatar()}" alt="Avatar">
                     <figcaption>
                         <h3>${id} ${employee.getName()} ${employee.getSurname()}</h3>
                     </figcaption>
                 </figure>
-            </div>
+            </header>
             <div class="col-xs-12 col-md-9">
                 <h2 style="margin-bottom: 2%;">Your tasks:</h2>
                 <h4>To do: </h4>
@@ -65,8 +65,8 @@
                         ${allTasks.size()}</div>
                 </div>
             </div>
-        </div>
-        <div class="row">
+        </header>
+        <section class="row">
             <div class="col-xs-12">
                 <h1>To do:</h1>
                 <c:forEach items="${todoTasks}" var="task">
@@ -82,8 +82,8 @@
                     </div>
                 </c:forEach>
             </div>
-        </div>
-        <div class="row">
+        </section>
+        <section class="row">
             <div class="col-xs-12">
                 <h1>Doing:</h1>
                 <c:forEach items="${doingTasks}" var="task">
@@ -97,8 +97,8 @@
                     </div>
                 </c:forEach>
             </div>
-        </div>
-        <div class="row">
+        </section>
+        <section class="row">
             <div class="col-xs-12">
                 <h1>Done:</h1>
                 <c:forEach items="${doneTasks}" var="task">
@@ -114,9 +114,9 @@
                     </div>
                 </c:forEach>
             </div>
-        </div>
-    </div>
-    <nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0; margin-top: 2%;">
+        </section>
+    </article>
+    <footer class="navbar navbar-default navbar-static-top" style="margin-bottom: 0; margin-top: 2%;">
         <div class="container">
             <p class="navbar-text navbar-center">
                 Kanban implemented in Java EE & Hibernate by
@@ -130,6 +130,6 @@
                 <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>.
             </p>
         </div>
-    </nav>
+    </footer>
 </body>
 </html>

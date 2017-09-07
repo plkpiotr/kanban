@@ -37,14 +37,14 @@
         </div>
     </nav>
 
-    <div class="container">
-        <div class="row">
+    <article class="container">
+        <header class="row">
             <div class="col-xs-12">
                 <h1>${project.getName()}</h1>
                 <h3>${project.getDescription()}</h3>
             </div>
-        </div>
-        <div class="row">
+        </header>
+        <section class="row">
             <div class="col-xs-12">
                 <a href="#todo">
                     <button class="btn btn-warning" type="button">
@@ -62,8 +62,8 @@
                     </button>
                 </a>
             </div>
-        </div>
-        <div class="row">
+        </section>
+        <section class="row">
             <div class="col-xs-12">
                 <h2 id="todo">To do:</h2>
                 <c:forEach items="${todoTasks}" var="task">
@@ -75,8 +75,8 @@
                     </div>
                 </c:forEach>
             </div>
-        </div>
-        <div class="row">
+        </section>
+        <section class="row">
             <div class="col-xs-12">
                 <h2 id="doing">Doing:</h2>
                 <c:forEach items="${doingTasks}" var="task">
@@ -90,7 +90,7 @@
                     </div>
                 </c:forEach>
             </div>
-        </div>
+        </section>
         <div class="row">
             <div class="col-xs-12">
                 <h2 id="done">Done:</h2>
@@ -108,8 +108,8 @@
                 </c:forEach>
             </div>
         </div>
-    </div>
-    <nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0; margin-top: 2%;">
+    </article>
+    <footer class="navbar navbar-default navbar-static-top" style="margin-bottom: 0; margin-top: 2%;">
         <div class="container">
             <p class="navbar-text navbar-center">
                 Kanban implemented in Java EE & Hibernate by
@@ -123,6 +123,6 @@
                 <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>.
             </p>
         </div>
-    </nav>
+    </footer>
 </body>
 </html>
