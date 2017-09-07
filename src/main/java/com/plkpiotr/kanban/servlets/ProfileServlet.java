@@ -30,7 +30,7 @@ public class ProfileServlet extends HttpServlet {
             EmployeeDAO employeeDAO = (EmployeeDAO) request.getAttribute("employeeDAO");
             Employee employee = (Employee) session.getAttribute("employee");
 
-            List allTasks = employeeDAO.getAllTasks(employee.getId());
+            List allTasks = employee.getListOfTask();
             List todoTasks = employeeDAO.getTasksByCategory(allTasks, "todo");
             List doingTasks = employeeDAO.getTasksByCategory(allTasks, "doing");
             List doneTasks = employeeDAO.getTasksByCategory(allTasks, "done");

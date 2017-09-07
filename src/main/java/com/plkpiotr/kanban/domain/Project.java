@@ -22,9 +22,6 @@ public class Project {
     @Column(nullable = false, length = 64)
     private String description;
 
-    @Column(nullable = false, length = 6)
-    private String color;
-
     @ManyToMany
     private List<Employee> listOfEmployees;
 
@@ -57,14 +54,6 @@ public class Project {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
     }
 
     public List<Employee> getListOfEmployee() {

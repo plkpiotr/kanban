@@ -8,13 +8,10 @@
     <meta name="author" content="Piotr Pałka">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <title>Profile | Kanban</title>
-
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <link rel="icon" href="../../img/post-it.png">
-
     <script src="../../js/jquery-3.2.1.min.js"></script>
     <script src="../../js/bootstrap.min.js"></script>
 </head>
@@ -43,7 +40,7 @@
                     <figure>
                         <img src="../../img/${employee.getAvatar()}" alt="Avatar">
                         <figcaption>
-                            <h3>${id} ${employee.getName()} ${employee.getSurname()}</h3>
+                            <h3>${employee.getName()} ${employee.getSurname()}</h3>
                         </figcaption>
                     </figure>
                 </header>
@@ -70,7 +67,7 @@
                 <div class="col-xs-12">
                     <h1>To do:</h1>
                     <c:forEach items="${todoTasks}" var="task">
-                        <div class="media" style="background-color: #f2b968">
+                        <div class="media yellow-note">
                             <div class="media-body">
                                 <div class="media-body">
                                     <h4 class="media-heading">
@@ -87,7 +84,7 @@
                 <div class="col-xs-12">
                     <h1>Doing:</h1>
                     <c:forEach items="${doingTasks}" var="task">
-                        <div class="media" style="background-color: #74c374">
+                        <div class="media green-note">
                             <div class="media-body">
                                 <h4 class="media-heading">
                                     <a href="project?idProject=${task.getProject().getId()}">${task.getProject().getName()}</a>
@@ -102,7 +99,7 @@
                 <div class="col-xs-12">
                     <h1>Done:</h1>
                     <c:forEach items="${doneTasks}" var="task">
-                        <div class="media" style="background-color: #73c9e3">
+                        <div class="media blue-note">
                             <div class="media-body">
                                 <div class="media-body">
                                     <h4 class="media-heading">
@@ -126,8 +123,8 @@
             <p class="navbar-text navbar-left">
                 PNG files on the website were made by
                 <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> and
-                <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a>
-                from <a href="https://www.flaticon.com/" title="Flaticon">flaticon.com</a> is licensed by
+                <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from
+                <a href="https://www.flaticon.com/" title="Flaticon">flaticon.com</a> is licensed by
                 <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>.
             </p>
         </div>

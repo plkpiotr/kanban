@@ -69,6 +69,22 @@ h2 {
     cursor: default;
 }
 
+.yellow-note {
+    background-color: #f2b968;
+}
+
+.green-note {
+    background-color: #74c374;
+}
+
+.blue-note {
+    background-color: #73c9e3;
+}
+
+.neat {
+    min-height: 175px
+}
+
 @media (min-width: 767px) and (max-width: 991px) {
     .col-xs-12 figure img{
         width: 50%;
