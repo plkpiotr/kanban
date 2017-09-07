@@ -48,18 +48,21 @@
                     <h2 style="margin-bottom: 2%;">Your tasks:</h2>
                     <h4>To do: </h4>
                     <div class="progress progress-striped">
-                        <div class="progress-bar progress-bar-warning" style="width: ${todoPercent}%">${todoTasks.size()}/
-                            ${allTasks.size()}</div>
+                        <div class="progress-bar progress-bar-warning" style="width: ${todoPercent}%">
+                            ${todoTasks.size()}/${allTasks.size()}
+                        </div>
                     </div>
                     <h4>Doing: </h4>
                     <div class="progress progress-striped">
-                        <div class="progress-bar progress-bar-success" style="width: ${doingPercent}%">${doingTasks.size()}/
-                            ${allTasks.size()}</div>
+                        <div class="progress-bar progress-bar-success" style="width: ${doingPercent}%">
+                            ${doingTasks.size()}/${allTasks.size()}
+                        </div>
                     </div>
                     <h4>Done: </h4>
                     <div class="progress progress-striped">
-                        <div class="progress-bar progress-bar-info" style="width: ${donePercent}%">${doneTasks.size()}/
-                            ${allTasks.size()}</div>
+                        <div class="progress-bar progress-bar-info" style="width: ${donePercent}%">
+                            ${doneTasks.size()}/${allTasks.size()}
+                        </div>
                     </div>
                 </div>
             </header>
