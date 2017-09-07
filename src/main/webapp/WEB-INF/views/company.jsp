@@ -43,8 +43,17 @@
             <div class="col-xs-12">
                 <c:forEach items="${employees}" var="employee">
                     <figure style="display: inline-block;">
-                        <img src="../../img/${employee.getAvatar()}" alt="Avatar" style="width: 100px;">
-                        <figcaption>${employee.getName()} ${employee.getSurname()}</figcaption>
+                        <img src="../../img/${employee.getAvatar()}" alt="Avatar" style="margin: 10px; width: 150px;">
+                        <figcaption>
+                            <c:choose>
+                                <c:when test="${employee.getName().length() + employee.getName().length() < 20}">
+                                    ${employee.getName()} ${employee.getSurname()}
+                                </c:when>
+                                <c:otherwise>
+                                    ${employee.getName().charAt(0)}. ${employee.getSurname()}
+                                </c:otherwise>
+                            </c:choose>
+                        </figcaption>
                     </figure>
                 </c:forEach>
             </div>
@@ -58,7 +67,7 @@
             </div>
         </div>
     </main>
-    <footer class="navbar navbar-default navbar-static-top" style="margin-bottom: 0; margin-top: 2%;">
+    <footer class="navbar navbar-default navbar-static-top margin-footer">
         <div class="container">
             <p class="navbar-text navbar-center">
                 Kanban implemented in Java EE & Hibernate by

@@ -65,7 +65,7 @@
             </header>
             <section class="row">
                 <div class="col-xs-12">
-                    <h1>To do:</h1>
+                    <h2>To do:</h2>
                     <c:forEach items="${todoTasks}" var="task">
                         <div class="media yellow-note">
                             <div class="media-body">
@@ -82,7 +82,7 @@
             </section>
             <section class="row">
                 <div class="col-xs-12">
-                    <h1>Doing:</h1>
+                    <h2>Doing:</h2>
                     <c:forEach items="${doingTasks}" var="task">
                         <div class="media green-note">
                             <div class="media-body">
@@ -97,7 +97,7 @@
             </section>
             <section class="row">
                 <div class="col-xs-12">
-                    <h1>Done:</h1>
+                    <h2>Done:</h2>
                     <c:forEach items="${doneTasks}" var="task">
                         <div class="media blue-note">
                             <div class="media-body">
@@ -114,7 +114,7 @@
             </section>
         </article>
     </main>
-    <footer class="navbar navbar-default navbar-static-top" style="margin-bottom: 0; margin-top: 2%;">
+    <footer class="navbar navbar-default navbar-static-top margin-footer">
         <div class="container">
             <p class="navbar-text navbar-center">
                 Kanban implemented in Java EE & Hibernate by

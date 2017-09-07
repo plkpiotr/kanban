@@ -85,6 +85,11 @@ h2 {
     min-height: 175px
 }
 
+.margin-footer {
+    margin-bottom: 0;
+    margin-top: 2%;
+}
+
 @media (min-width: 767px) and (max-width: 991px) {
     .col-xs-12 figure img{
         width: 50%;

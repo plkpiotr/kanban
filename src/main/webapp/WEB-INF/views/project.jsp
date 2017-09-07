@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
@@ -45,17 +46,17 @@
                 <div class="col-xs-12">
                     <a href="#todo">
                         <button class="btn btn-warning" type="button">
-                            To do: <span class="badge">${todoTasks.size()}</span>
+                            To do: <span class="badge">${fn:length(todoTasks)}</span>
                         </button>
                     </a>
                     <a href="#doing">
                         <button class="btn btn-success" type="button">
-                            Doing: <span class="badge">${doingTasks.size()}</span>
+                            Doing: <span class="badge">${fn:length(doingTasks)}</span>
                         </button>
                     </a>
                     <a href="#done">
                         <button class="btn btn-info" type="button">
-                            Done: <span class="badge">${doneTasks.size()}</span>
+                            Done: <span class="badge">${fn:length(doneTasks)}</span>
                         </button>
                     </a>
                 </div>
@@ -98,7 +99,7 @@
             </div>
         </article>
     </main>
-    <footer class="navbar navbar-default navbar-static-top" style="margin-bottom: 0; margin-top: 2%;">
+    <footer class="navbar navbar-default navbar-static-top margin-footer">
         <div class="container">
             <p class="navbar-text navbar-center">
                 Kanban implemented in Java EE & Hibernate by
