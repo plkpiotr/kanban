@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <link rel="icon" href="../../img/post-it.png">
 
+    <script src="../../js/jquery-3.2.1.min.js"></script>
     <script src="../../js/bootstrap.min.js"></script>
 </head>
 <body>
@@ -42,7 +43,7 @@
                 <figure>
                     <img src="../../img/${employee.getAvatar()}" alt="Avatar">
                     <figcaption>
-                        <h4>${id} ${employee.getName()} ${employee.getSurname()}</h4>
+                        <h3>${id} ${employee.getName()} ${employee.getSurname()}</h3>
                     </figcaption>
                 </figure>
             </div>
@@ -73,7 +74,7 @@
                         <div class="media-body">
                             <div class="media-body">
                                 <h4 class="media-heading">
-                                    <a href="https://www.flaticon.com/authors/those-icons">${task.getProject().getName()}</a>
+                                    <a href="project?idProject=${task.getProject().getId()}">${task.getProject().getName()}</a>
                                 </h4>
                                 ${task.getContent()}
                             </div>
@@ -89,7 +90,7 @@
                     <div class="media" style="background-color: #74c374">
                         <div class="media-body">
                             <h4 class="media-heading">
-                                <a href="https://www.flaticon.com/authors/those-icons">${task.getProject().getName()}</a>
+                                <a href="project?idProject=${task.getProject().getId()}">${task.getProject().getName()}</a>
                             </h4>
                             ${task.getContent()}
                         </div>
@@ -105,7 +106,7 @@
                         <div class="media-body">
                             <div class="media-body">
                                 <h4 class="media-heading">
-                                    <a href="https://www.flaticon.com/authors/those-icons">${task.getProject().getName()}</a>
+                                    <a href="project?idProject=${task.getProject().getId()}">${task.getProject().getName()}</a>
                                 </h4>
                                 ${task.getContent()}
                             </div>

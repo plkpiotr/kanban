@@ -20,7 +20,6 @@ body {
 
 .navbar-text, h3, h4 {
     cursor: default;
-    /*font-weight: 400;*/
 }
 
 h2 {
@@ -28,7 +27,7 @@ h2 {
 }
 
 .row {
-    padding: 20px;
+    padding: 10px;
 }
 
 .progress {
@@ -36,6 +35,11 @@ h2 {
     margin-right: auto;
     text-align: center;
     width: 70%;
+}
+
+.btn {
+    margin-left: 4%;
+    margin-right: 4%;
 }
 
 .media {
@@ -55,16 +59,14 @@ h2 {
 }
 
 .media-heading a {
+    text-decoration: underline;
     color: #000000;
 }
 
-.media-heading a:hover {
-    text-decoration: none;
-}
-
-.media-object {
-    height: 64px;
-    width: 64px;
+.media img {
+    height: 36px;
+    width: 36px;
+    cursor: default;
 }
 
 @media (min-width: 767px) and (max-width: 991px) {

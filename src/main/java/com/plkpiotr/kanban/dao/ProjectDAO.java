@@ -43,11 +43,25 @@ public class ProjectDAO {
     }
 
     /**
+     * Gets a project by ID project's and ID of company from session.
+     *
+     * @param idProject ID project's.
+     * @param idCompany ID of company from session.
+     */
+    public Project getProjectForEmployee(final Integer idProject, final Integer idCompany) {
+        return (Project) entityManager.createQuery("SELECT p from Project p WHERE p.id = :idProject AND p.company.id" +
+                " = :idCompany")
+                .setParameter("idProject", idProject)
+                .setParameter("idCompany", idCompany)
+                .getSingleResult();
+    }
+
+    /**
      * Gets all tasks in a project.
      *
      * @param idProject ID project's.
      */
-    public List<Task> getAllTasks(final int idProject) {
+    public List<Task> getAllTasks(final Integer idProject) {
         return entityManager.createQuery("SELECT t from Task t WHERE t.project.id = :idProject")
                 .setParameter("idProject", idProject)
                 .getResultList();
