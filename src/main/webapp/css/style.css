@@ -69,6 +69,23 @@ h2 {
     cursor: default;
 }
 
+.table {
+    background-color: #f8f8f8;
+}
+
+.table tr:first-child th {
+    text-align: center;
+    cursor: default;
+}
+
+.table tr td a {
+    display: block;
+}
+
+.table tr td a:hover {
+    cursor: pointer;
+}
+
 .yellow-note {
     background-color: #f2b968;
 }
@@ -86,7 +103,6 @@ h2 {
 }
 
 .margin-footer {
-    margin-bottom: 0;
     margin-top: 2%;
 }
 

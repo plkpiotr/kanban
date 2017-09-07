@@ -114,7 +114,7 @@
             </section>
         </article>
     </main>
-    <footer class="navbar navbar-default navbar-static-top margin-footer">
+    <footer class="navbar navbar-default navbar-static-top margin-footer" style="margin-bottom: 0">
         <div class="container">
             <p class="navbar-text navbar-center">
                 Kanban implemented in Java EE & Hibernate by

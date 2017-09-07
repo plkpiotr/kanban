@@ -34,40 +34,62 @@
         </div>
     </nav>
     <main>
-        <div class="row">
-            <div class="col-xs-12">
-                <h1>Team</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <c:forEach items="${employees}" var="employee">
-                    <figure style="display: inline-block;">
-                        <img src="../../img/${employee.getAvatar()}" alt="Avatar" style="margin: 10px; width: 150px;">
-                        <figcaption>
-                            <c:choose>
-                                <c:when test="${employee.getName().length() + employee.getName().length() < 20}">
-                                    ${employee.getName()} ${employee.getSurname()}
-                                </c:when>
-                                <c:otherwise>
-                                    ${employee.getName().charAt(0)}. ${employee.getSurname()}
-                                </c:otherwise>
-                            </c:choose>
-                        </figcaption>
-                    </figure>
-                </c:forEach>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <h2 id="doing">Doing:</h2>
-                <c:forEach items="${projects}" var="project">
-                    ${project.getName()} ${project.getDescription()} <br>
-                </c:forEach>
-            </div>
-        </div>
+        <article class="container">
+            <header class="row">
+                <div class="col-xs-12">
+                    <h2>Team:</h2>
+                </div>
+            </header>
+            <section class="row">
+                <div class="col-xs-12">
+                    <c:forEach items="${employees}" var="employee">
+                        <figure style="display: inline-block;">
+                            <img src="../../img/${employee.getAvatar()}" alt="Avatar"
+                                 style="margin: 10px; width: 150px;">
+                            <figcaption>
+                                <c:choose>
+                                    <c:when test="${employee.getName().length() + employee.getName().length() < 20}">
+                                        ${employee.getName()} ${employee.getSurname()}
+                                    </c:when>
+                                    <c:otherwise>
+                                        ${employee.getName().charAt(0)}. ${employee.getSurname()}
+                                    </c:otherwise>
+                                </c:choose>
+                            </figcaption>
+                        </figure>
+                    </c:forEach>
+                </div>
+            </section>
+            <section class="row">
+                <div class="col-xs-12">
+                    <h2 style="margin-bottom: 2%;">Projects:</h2>
+                    <table class="table table-hover table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Project</th>
+                            <th>Description</th>
+                            <th>Tasks</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach items="${projects}" var="project">
+                            <tr>
+                                <td>${project.getName()}</td>
+                                <td>${project.getDescription()}</td>
+                                <td>
+                                    <a href="project?idProject=${project.getId()}">
+                                        <span class="badge">${project.getListOfTasks().size()}</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </article>
     </main>
-    <footer class="navbar navbar-default navbar-static-top margin-footer">
+    <footer class="navbar navbar-default navbar-static-top margin-footer" style="margin-bottom: 0">
         <div class="container">
             <p class="navbar-text navbar-center">
                 Kanban implemented in Java EE & Hibernate by

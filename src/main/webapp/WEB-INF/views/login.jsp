@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
-                <h1>Login</h1>
+                <h2>Login</h2>
                 ${infoLogin}
                 <form method="post">
                     <div class="form-group">

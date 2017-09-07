@@ -56,12 +56,12 @@ public class Project {
         this.description = description;
     }
 
-    public List<Employee> getListOfEmployee() {
+    public List<Employee> getListOfEmployees() {
         return listOfEmployees;
     }
 
-    public void setListOfEmployee(List<Employee> listOfEmployee) {
-        this.listOfEmployees = listOfEmployee;
+    public void setListOfEmployees(List<Employee> listOfEmployees) {
+        this.listOfEmployees = listOfEmployees;
     }
 
     public List<Task> getListOfTasks() {
@@ -70,14 +70,6 @@ public class Project {
 
     public void setListOfTasks(List<Task> listOfTasks) {
         this.listOfTasks = listOfTasks;
-    }
-
-    public List<Employee> getListOfEmployees() {
-        return listOfEmployees;
-    }
-
-    public void setListOfEmployees(List<Employee> listOfEmployees) {
-        this.listOfEmployees = listOfEmployees;
     }
 
     public Company getCompany() {
