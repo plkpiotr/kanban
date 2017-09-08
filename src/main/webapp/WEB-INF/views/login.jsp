@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
-                <h2>Login</h2>
+                <h2 style="margin-bottom: 5%;">Log in <small>to the Kanban</small></h2>
                 ${infoLogin}
                 <form method="post">
                     <div class="form-group">
@@ -31,7 +31,15 @@
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
                                name="password" maxlength="15">
                     </div>
-                    <button class="btn btn-default">Login</button>
+                    <div class="col-xs-12" style="margin-bottom: 5%;">
+                        <button class="btn btn-primary">Login »</button>
+                    </div>
+                    <div class="col-xs-12" style="margin-bottom: 5%;">
+                        <a class="btn btn-default" href="index">« Home page</a>
+                    </div>
+                    <div class="col-xs-12" style="margin-bottom: 5%;">
+                        <a class="btn btn-default" href="registration">« Registration</a>
+                    </div>
                 </form>
             </div>
             <div class="col-sm-4"></div>
