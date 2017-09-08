@@ -38,12 +38,23 @@
         <article class="container">
             <header class="row">
                 <div class="col-xs-12">
-                    <h1>${project.getName()}</h1>
-                    <h3>${project.getDescription()}</h3>
+                    <h1><strong>${project.getName()}</strong></h1>
+                    <h2>${project.getDescription()}</h2>
                 </div>
             </header>
             <section class="row">
                 <div class="col-xs-12">
+                    <a href="newtask?idProject=${project.getId()}">
+                        <button class="btn btn-default" type="button">Add a task</button>
+                    </a>
+                    <a href="deleteproject?idProject=${project.getId()}">
+                        <button class="btn btn-danger" type="button">Delete this project</button>
+                    </a>
+                </div>
+            </section>
+            <section class="row">
+                <div class="col-xs-12">
+                    <h3 style="margin-bottom: 2%">Summary:</h3>
                     <a href="#todo">
                         <button class="btn btn-warning" type="button">
                             To do: <span class="badge">${fn:length(todoTasks)}</span>
@@ -63,7 +74,7 @@
             </section>
             <section class="row">
                 <div class="col-xs-12">
-                    <h3 id="todo">To do:</h3>
+                    <h3 id="todo"><strong>To do:</strong></h3>
                     <c:if test="${todoTasks[0] == null}">
                         <p>No tasks.</p>
                     </c:if>
@@ -78,7 +89,7 @@
             </section>
             <section class="row">
                 <div class="col-xs-12">
-                    <h3 id="doing">Doing:</h3>
+                    <h3 id="doing"><strong>Doing:</strong></h3>
                     <c:if test="${doingTasks[0] == null}">
                         <p>No tasks.</p>
                     </c:if>
@@ -93,7 +104,7 @@
             </section>
             <div class="row">
                 <div class="col-xs-12">
-                    <h3 id="doing">Done:</h3>
+                    <h3 id="doing"><strong>Done:</strong></h3>
                     <c:if test="${doneTasks[0] == null}">
                         <p>No tasks.</p>
                     </c:if>

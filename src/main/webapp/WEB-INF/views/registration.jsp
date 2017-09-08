@@ -17,7 +17,7 @@
 </head>
 <body>
     <div class="container">
-        <h2 class="text-center">Join <small>the Community of Kanban</small></h2>
+        <h2 class="text-center">Join in <small>the Community of Kanban</small></h2>
         <form method="post">
             <main class="row">
                 <div class="col-sm-6">

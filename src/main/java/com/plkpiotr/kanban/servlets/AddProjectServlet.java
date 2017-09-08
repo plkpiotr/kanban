@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/newtask")
-public class NewTaskServlet extends HttpServlet {
+@WebServlet("/addproject")
+public class AddProjectServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -26,7 +26,7 @@ public class NewTaskServlet extends HttpServlet {
             // EmployeeDAO employeeDAO = (EmployeeDAO) request.getAttribute("employeeDAO");
             // Employee employee = (Employee) request.getAttribute("employee");
 
-            request.getRequestDispatcher("/WEB-INF/views/newtask.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/views/addproject.jsp").forward(request, response);
         }
     }
 }
