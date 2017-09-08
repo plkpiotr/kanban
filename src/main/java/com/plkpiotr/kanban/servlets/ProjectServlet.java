@@ -13,6 +13,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Serves view of a project.
+ */
 @WebServlet("/project")
 public class ProjectServlet extends HttpServlet {
 

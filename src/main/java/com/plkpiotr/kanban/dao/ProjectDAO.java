@@ -46,7 +46,7 @@ public class ProjectDAO {
      * Gets a project by ID project's and ID of company from session.
      *
      * @param idProject ID project's.
-     * @param idCompany ID of company from session.
+     * @param idCompany ID of the company from session.
      */
     public Project getProjectForEmployee(final Integer idProject, final Integer idCompany) {
         return (Project) entityManager.createQuery("SELECT p from Project p WHERE p.id = :idProject AND p.company.id" +

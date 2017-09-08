@@ -12,6 +12,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Serves view of a profile.
+ */
 @WebServlet("/profile")
 public class ProfileServlet extends HttpServlet {
 

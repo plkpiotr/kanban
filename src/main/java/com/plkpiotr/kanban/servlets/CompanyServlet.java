@@ -12,6 +12,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Serves view of a company.
+ */
 @WebServlet("/company")
 public class CompanyServlet extends HttpServlet {
 

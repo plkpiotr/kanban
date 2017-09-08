@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Serves registration form.
+ */
 @WebServlet("/registration")
 public class RegistrationServlet extends HttpServlet {
 

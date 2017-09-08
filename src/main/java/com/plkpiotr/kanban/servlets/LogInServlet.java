@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+/**
+ * Serves login form.
+ */
 @WebServlet("/login")
 public class LogInServlet extends HttpServlet {
 
