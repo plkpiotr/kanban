@@ -40,7 +40,7 @@ public class AddTaskServlet extends HttpServlet {
             request.setAttribute("employees", employees);
             request.setAttribute("project", project);
 
-            request.getRequestDispatcher("/WEB-INF/views/newtask.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/views/addtask.jsp").forward(request, response);
         }
     }
 }

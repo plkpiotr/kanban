@@ -44,7 +44,7 @@
             </header>
             <section class="row">
                 <div class="col-xs-12">
-                    <a href="newtask?idProject=${project.getId()}">
+                    <a href="addtask?idProject=${project.getId()}">
                         <button class="btn btn-default" type="button">Add a task</button>
                     </a>
                     <a href="deleteproject?idProject=${project.getId()}">
