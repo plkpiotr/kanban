@@ -31,7 +31,7 @@ public class RegistrationServlet extends HttpServlet {
 
         try {
             employeeDAO.getEmployeeByNick(nick);
-            request.setAttribute("infoRegistration", "Nick: " + nick + " already exist.");
+            request.setAttribute("infoNick", "Nick: " + nick + " already exist.");
             doGet(request, response);
         } catch (NoResultException e) {
             Employee employee = new Employee();
