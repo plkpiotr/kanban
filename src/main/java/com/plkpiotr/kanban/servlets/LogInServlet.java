@@ -28,7 +28,7 @@ public class LogInServlet extends HttpServlet {
 
             response.sendRedirect(request.getContextPath() + "/profile");
         } catch (NoResultException e) {
-            request.setAttribute("infoLogin", "Data in login form was invalid");
+            request.setAttribute("infoLogin", "Data in login form was invalid.");
             doGet(request, response);
         }
     }

@@ -20,17 +20,17 @@
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
                 <h2 style="margin-bottom: 5%;">Log in <small>to the Kanban</small></h2>
-                ${infoLogin}
                 <form method="post">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input class="form-control" id="exampleInputEmail1" placeholder="Email" name="nick" maxlength="10">
+                        <label for="exampleInputEmail1">Nick</label>
+                        <input class="form-control" id="exampleInputEmail1" placeholder="Nick" name="nick" maxlength="10">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
                                name="password" maxlength="15">
                     </div>
+                    <p class="bg-info">${infoLogin}</p>
                     <div class="col-xs-12" style="margin-bottom: 5%;">
                         <button class="btn btn-primary">Login »</button>
                     </div>
