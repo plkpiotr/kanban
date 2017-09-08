@@ -51,8 +51,6 @@
           - company.jsp
           - index.jsp
           - login.jsp
-          - newproject.jsp
-          - newtask.jsp
           - profile.jsp
           - project.jsp
           - registration.jsp
