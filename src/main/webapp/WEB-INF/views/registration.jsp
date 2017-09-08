@@ -20,7 +20,7 @@
         <h2 class="text-center">Join <small>the Community of Kanban</small></h2>
         <p class="bg-info text-center">${infoRegistration}</p>
         <form method="post">
-            <div class="row">
+            <main class="row">
                 <div class="col-sm-6">
                     <div class="row">
                         <div class="col-xs-2"></div>
@@ -63,8 +63,8 @@
                         </c:forEach>
                     </div>
                 </div>
-            </div>
-            <div class="row" style="margin-bottom: 1%;">
+            </main>
+            <nav class="row" style="margin-bottom: 1%;">
                 <div class="col-xs-1"></div>
                 <div class="col-xs-3 col-md-2 text-right">
                     <a class="btn btn-default" href="index">« Home page</a>
@@ -76,7 +76,7 @@
                     <button class="btn btn-primary">Register »</button>
                 </div>
                 <div class="col-xs-1"></div>
-            </div>
+            </nav>
         </form>
     </div>
     <footer class="navbar navbar-default navbar-static-top margin-footer" style="margin-bottom: 0">

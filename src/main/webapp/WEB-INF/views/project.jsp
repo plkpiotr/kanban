@@ -64,6 +64,9 @@
             <section class="row">
                 <div class="col-xs-12">
                     <h3 id="todo">To do:</h3>
+                    <c:if test="${todoTasks[0] == null}">
+                        <p>No tasks.</p>
+                    </c:if>
                     <c:forEach items="${todoTasks}" var="task">
                         <div class="media yellow-note neat">
                             <img src="../../img/${task.getEmployee().getAvatar()}" alt="Avatar">
@@ -76,6 +79,9 @@
             <section class="row">
                 <div class="col-xs-12">
                     <h3 id="doing">Doing:</h3>
+                    <c:if test="${doingTasks[0] == null}">
+                        <p>No tasks.</p>
+                    </c:if>
                     <c:forEach items="${doingTasks}" var="task">
                         <div class="media green-note neat">
                             <img src="../../img/${task.getEmployee().getAvatar()}" alt="Avatar">
@@ -87,7 +93,10 @@
             </section>
             <div class="row">
                 <div class="col-xs-12">
-                    <h3 id="done">Done:</h3>
+                    <h3 id="doing">Done:</h3>
+                    <c:if test="${doneTasks[0] == null}">
+                        <p>No tasks.</p>
+                    </c:if>
                     <c:forEach items="${doneTasks}" var="task">
                         <div class="media blue-note neat">
                             <img src="../../img/${task.getEmployee().getAvatar()}" alt="Avatar">

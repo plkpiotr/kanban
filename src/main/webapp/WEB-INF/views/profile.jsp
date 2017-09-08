@@ -68,7 +68,10 @@
             </header>
             <section class="row">
                 <div class="col-xs-12">
-                    <h2>To do:</h2>
+                    <h3>To do:</h3>
+                    <c:if test="${todoTasks[0] == null}">
+                        <p>No tasks.</p>
+                    </c:if>
                     <c:forEach items="${todoTasks}" var="task">
                         <div class="media yellow-note">
                             <div class="media-body">
@@ -85,7 +88,10 @@
             </section>
             <section class="row">
                 <div class="col-xs-12">
-                    <h2>Doing:</h2>
+                    <h3>Doing:</h3>
+                    <c:if test="${doingTasks[0] == null}">
+                        <p>No tasks.</p>
+                    </c:if>
                     <c:forEach items="${doingTasks}" var="task">
                         <div class="media green-note">
                             <div class="media-body">
@@ -100,7 +106,10 @@
             </section>
             <section class="row">
                 <div class="col-xs-12">
-                    <h2>Done:</h2>
+                    <h3>Done:</h3>
+                    <c:if test="${doneTasks[0] == null}">
+                        <p>No tasks.</p>
+                    </c:if>
                     <c:forEach items="${doneTasks}" var="task">
                         <div class="media blue-note">
                             <div class="media-body">

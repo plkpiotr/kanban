@@ -15,7 +15,7 @@
     <script src="../../js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="container">
+    <main class="container">
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
@@ -30,34 +30,21 @@
                         <label for="password">Password:</label>
                         <input type="password" class="form-control" id="password" placeholder="Password" name="password" maxlength="15">
                     </div>
-                    <div class="col-xs-12" style="margin-bottom: 5%;">
-                        <button class="btn btn-primary">Login »</button>
-                    </div>
-                    <div class="col-xs-12" style="margin-bottom: 5%;">
-                        <a class="btn btn-default" href="index">« Home page</a>
-                    </div>
-                    <div class="col-xs-12" style="margin-bottom: 5%;">
-                        <a class="btn btn-default" href="registration">« Registration</a>
-                    </div>
+                    <nav>
+                        <div class="col-xs-12" style="margin-bottom: 5%;">
+                            <button class="btn btn-primary">Login »</button>
+                        </div>
+                        <div class="col-xs-12" style="margin-bottom: 5%;">
+                            <a class="btn btn-default" href="index">« Home page</a>
+                        </div>
+                        <div class="col-xs-12" style="margin-bottom: 5%;">
+                            <a class="btn btn-default" href="registration">« Registration</a>
+                        </div>
+                    </nav>
                 </form>
             </div>
             <div class="col-sm-4"></div>
         </div>
-    </div>
-    <footer class="navbar navbar-default navbar-static-top margin-footer" style="margin-bottom: 0">
-        <div class="container">
-            <p class="navbar-text navbar-center">
-                Kanban implemented in Java EE & Hibernate by
-                <a href="https://github.com/plkpiotr">plkpiotr</a>.
-            </p>
-            <p class="navbar-text navbar-left">
-                PNG files on the website were made by
-                <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> and
-                <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from
-                <a href="https://www.flaticon.com/" title="Flaticon">flaticon.com</a> is licensed by
-                <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>.
-            </p>
-        </div>
-    </footer>
+    </main>
 </body>
 </html>

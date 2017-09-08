@@ -35,9 +35,15 @@ public class ProfileServlet extends HttpServlet {
             List doingTasks = employeeDAO.getTasksByCategory(allTasks, "doing");
             List doneTasks = employeeDAO.getTasksByCategory(allTasks, "done");
 
-            int todoPercent = 100 * todoTasks.size()/allTasks.size();
-            int doingPercent = 100 * doingTasks.size()/allTasks.size();
-            int donePercent = 100 * doneTasks.size()/allTasks.size();
+            int todoPercent = 0;
+            int doingPercent = 0;
+            int donePercent = 0;
+
+            if (allTasks.size() != 0) {
+                todoPercent = 100 * todoTasks.size() / allTasks.size();
+                doingPercent = 100 * doingTasks.size() / allTasks.size();
+                donePercent = 100 * doneTasks.size() / allTasks.size();
+            }
 
             request.setAttribute("allTasks", allTasks);
             request.setAttribute("todoTasks", todoTasks);
