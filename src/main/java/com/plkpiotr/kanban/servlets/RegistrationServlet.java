@@ -29,12 +29,9 @@ public class RegistrationServlet extends HttpServlet {
         String avatar = request.getParameter("avatar");
         String companyName = request.getParameter("company");
         EmployeeDAO employeeDAO = (EmployeeDAO) request.getAttribute("employeeDAO");
-
-        // TODO: Data validation in JS/Query
-
         try {
             employeeDAO.getEmployeeByNick(nick);
-            request.setAttribute("infoNick", "Nick: " + nick + " already exist.");
+            request.setAttribute("infoRegistration", "Nick: " + nick + " already exist.");
             doGet(request, response);
         } catch (NoResultException e) {
             Employee employee = new Employee();
@@ -43,19 +40,22 @@ public class RegistrationServlet extends HttpServlet {
             employee.setNick(nick);
             employee.setPassword(password);
             employee.setAvatar(avatar);
-            if (employeeDAO.getCompany(companyName) == null) {
+            if (employeeDAO.getCompany(companyName).size() == 0) {
                 CompanyDAO companyDAO = (CompanyDAO) request.getAttribute("companyDAO");
                 Company company = new Company();
                 company.setName(companyName);
                 companyDAO.insertCompany(company);
+                employee.setCompany(company);
+            } else {
+                Company foundCompany = (Company) employeeDAO.getCompany(companyName).get(0);
+                employee.setCompany(foundCompany);
             }
-            employee.setCompany(employeeDAO.getCompany(companyName));
             if (employeeDAO.insertEmployee(employee)) {
                 request.setAttribute("infoRegistration", "Congratulations! You have just joined in the Kanban Community.");
                 doGet(request, response);
             } else {
                 request.setAttribute("infoRegistration", "Registration failed.");
-                // doGet(request, response);
+                doGet(request, response);
             }
         }
     }

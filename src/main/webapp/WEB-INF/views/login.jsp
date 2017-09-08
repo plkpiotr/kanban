@@ -24,11 +24,12 @@
                 <form method="post">
                     <div class="form-group">
                         <label for="nick">Nick:</label>
-                        <input class="form-control" id="nick" placeholder="Nick" name="nick" maxlength="10">
+                        <input class="form-control" id="nick" placeholder="Nick" name="nick" maxlength="10" required>
                     </div>
                     <div class="form-group">
                         <label for="password">Password:</label>
-                        <input type="password" class="form-control" id="password" placeholder="Password" name="password" maxlength="15">
+                        <input type="password" class="form-control" id="password" placeholder="Password"
+                               name="password" maxlength="15" required>
                     </div>
                     <nav>
                         <div class="col-xs-12" style="margin-bottom: 5%;">

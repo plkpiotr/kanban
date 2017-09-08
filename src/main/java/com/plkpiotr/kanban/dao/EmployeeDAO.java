@@ -1,6 +1,5 @@
 package com.plkpiotr.kanban.dao;
 
-import com.plkpiotr.kanban.domain.Company;
 import com.plkpiotr.kanban.domain.Employee;
 import com.plkpiotr.kanban.domain.Task;
 
@@ -117,13 +116,13 @@ public class EmployeeDAO {
     }
 
     /**
-     * Gets company by name.
+     * Gets company by name. WHY?
      *
      * @param name ID company's.
      */
-    public Company getCompany(final String name) {
-        return (Company) entityManager.createQuery("SELECT c from Company c WHERE c.name = :name")
+    public List getCompany(final String name) {
+        return entityManager.createQuery("SELECT c from Company c WHERE c.name = :name")
                 .setParameter("name", name)
-                .getSingleResult();
+                .getResultList();
     }
 }
