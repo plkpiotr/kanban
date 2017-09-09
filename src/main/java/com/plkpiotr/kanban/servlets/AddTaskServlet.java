@@ -48,9 +48,10 @@ public class AddTaskServlet extends HttpServlet {
         task.setProject(project);
 
         if (taskDAO.insertTask(task)) {
-            request.setAttribute("infoTask", "The task was added.");
-            doGet(request, response);
-        } else {
+            session.setAttribute("idProject", idProject);
+            response.sendRedirect(request.getContextPath() + "/addtask?idProject=" + idProject);
+        }
+        else {
             request.setAttribute("infoTask", "The task wasn't added.");
             doGet(request, response);
         }

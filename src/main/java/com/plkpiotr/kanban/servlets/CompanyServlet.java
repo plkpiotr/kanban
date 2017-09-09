@@ -40,18 +40,16 @@ public class CompanyServlet extends HttpServlet {
                 project.setDescription(description);
                 project.setCompany(employee.getCompany());
                 if (projectDAO.insertProject(project)) {
-                    request.setAttribute("infoProject", "The project was created.");
-                    doGet(request, response);
+                    response.sendRedirect(request.getContextPath() + "/company");
                 } else {
                     request.setAttribute("infoProject", "The project wasn't created.");
                     doGet(request, response);
                 }
             } else {
                 Project project = projectDAO.getProjectForEmployee(idProject, employee.getCompany().getId());
-                if (projectDAO.deleteProject(project)) {
-                    request.setAttribute("infoProject", "The project was deleted.");
-                    doGet(request, response);
-                } else {
+                if (projectDAO.deleteProject(project))
+                    response.sendRedirect(request.getContextPath() + "/company");
+                else {
                     request.setAttribute("infoProject", "The project wasn't deleted.");
                     doGet(request, response);
                 }

@@ -67,10 +67,11 @@
                     <table class="table table-hover table-bordered">
                         <thead>
                         <tr>
-                            <th>Actions</th>
+                            <th>Delete</th>
                             <th>Project</th>
                             <th>Description</th>
                             <th>Tasks</th>
+                            <th>Enter</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -84,16 +85,10 @@
                                 </td>
                                 <td>${project.getName()}</td>
                                 <td>${project.getDescription()}</td>
+                                <td>${project.getListOfTasks().size()}</td>
                                 <td>
                                     <a href="project?idProject=${project.getId()}">
-                                        <c:choose>
-                                            <c:when test="${project.getListOfTasks() == null}">
-                                                <span class="badge">0</span>
-                                            </c:when>
-                                            <c:otherwise>
-                                                <span class="badge">${project.getListOfTasks().size()}</span>
-                                            </c:otherwise>
-                                        </c:choose>
+                                        <span class="badge">»</span>
                                     </a>
                                 </td>
                             </tr>
