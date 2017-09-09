@@ -63,9 +63,11 @@
             <section class="row">
                 <div class="col-xs-12">
                     <h2 style="margin-bottom: 2%;">Projects:</h2>
+                    <p class="bg-info text-center">${infoProject}</p>
                     <table class="table table-hover table-bordered">
                         <thead>
                         <tr>
+                            <th>Actions</th>
                             <th>Project</th>
                             <th>Description</th>
                             <th>Tasks</th>
@@ -74,6 +76,12 @@
                         <tbody>
                         <c:forEach items="${projects}" var="project">
                             <tr>
+                                <td>
+                                    <form method="post">
+                                        <input type="hidden" name="idProject" value="${project.getId()}">
+                                        <button class="btn btn-danger btn-xs">Delete</button>
+                                    </form>
+                                </td>
                                 <td>${project.getName()}</td>
                                 <td>${project.getDescription()}</td>
                                 <td>

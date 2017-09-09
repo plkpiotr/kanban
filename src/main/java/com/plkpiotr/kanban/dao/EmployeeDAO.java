@@ -41,7 +41,6 @@ public class EmployeeDAO {
             return true;
         } catch (Exception e) {
             entityTransaction.rollback();
-            e.printStackTrace();
             return false;
         }
     }

@@ -37,6 +37,24 @@ public class ProjectDAO {
             return true;
         } catch (Exception e) {
             entityTransaction.rollback();
+            return false;
+        }
+    }
+
+    /**
+     * Delete a project from database
+     *
+     * @param project Project object waiting for deleting from database.
+     */
+    public boolean deleteProject(Project project) {
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        try {
+            entityTransaction.begin();
+            entityManager.remove(project);
+            entityTransaction.commit();
+            return true;
+        } catch (Exception e) {
+            entityTransaction.rollback();
             e.printStackTrace();
             return false;
         }

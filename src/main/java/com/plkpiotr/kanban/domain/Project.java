@@ -25,7 +25,7 @@ public class Project {
     @ManyToMany
     private List<Employee> listOfEmployees;
 
-    @OneToMany(mappedBy = "project")
+    @OneToMany(mappedBy = "project", orphanRemoval = true)
     private List<Task> listOfTasks;
 
     @ManyToOne

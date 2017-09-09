@@ -33,7 +33,6 @@ public class CompanyDAO {
             entityTransaction.commit();
         } catch (Exception e) {
             entityTransaction.rollback();
-            e.printStackTrace();
         }
     }
 

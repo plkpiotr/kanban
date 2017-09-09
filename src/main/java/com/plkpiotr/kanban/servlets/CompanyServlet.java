@@ -1,7 +1,10 @@
 package com.plkpiotr.kanban.servlets;
 
+import com.plkpiotr.kanban.dao.CompanyDAO;
+import com.plkpiotr.kanban.dao.ProjectDAO;
 import com.plkpiotr.kanban.domain.Company;
 import com.plkpiotr.kanban.domain.Employee;
+import com.plkpiotr.kanban.domain.Project;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,6 +24,20 @@ public class CompanyServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
+        HttpSession session = request.getSession();
+
+        ProjectDAO projectDAO = (ProjectDAO) request.getAttribute("projectDAO");
+        Employee employee = (Employee) session.getAttribute("employee");
+        Integer idProject = Integer.parseInt(request.getParameter("idProject"));
+        Project project = projectDAO.getProjectForEmployee(idProject, employee.getCompany().getId());
+
+        if(projectDAO.deleteProject(project)) {
+            request.setAttribute("infoProject", "The project was deleted.");
+            doGet(request, response);
+        } else {
+            request.setAttribute("infoProject", "The project wasn't deleted.");
+            doGet(request, response);
+        }
     }
 
     @Override
@@ -31,10 +48,11 @@ public class CompanyServlet extends HttpServlet {
         } else {
             request.setCharacterEncoding("UTF-8");
             Employee employee = (Employee) session.getAttribute("employee");
+            CompanyDAO companyDAO = (CompanyDAO) request.getAttribute("companyDAO");
             Company company = employee.getCompany();
 
             List employees = company.getListOfEmployees();
-            List projects = company.getListOfProjects();
+            List projects = companyDAO.getProjects(employee.getCompany().getId());
 
             request.setAttribute("employees", employees);
             request.setAttribute("projects", projects);

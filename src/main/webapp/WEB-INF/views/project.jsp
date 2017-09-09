@@ -47,9 +47,6 @@
                     <a href="addtask?idProject=${project.getId()}">
                         <button class="btn btn-default" type="button">Add a task</button>
                     </a>
-                    <a href="deleteproject?idProject=${project.getId()}">
-                        <button class="btn btn-danger" type="button">Delete this project</button>
-                    </a>
                 </div>
             </section>
             <section class="row">
