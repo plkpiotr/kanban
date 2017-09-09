@@ -6,6 +6,7 @@ import com.plkpiotr.kanban.domain.Company;
 import com.plkpiotr.kanban.domain.Employee;
 import com.plkpiotr.kanban.domain.Project;
 
+import javax.persistence.NoResultException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,14 +29,19 @@ public class CompanyServlet extends HttpServlet {
 
         ProjectDAO projectDAO = (ProjectDAO) request.getAttribute("projectDAO");
         Employee employee = (Employee) session.getAttribute("employee");
-        Integer idProject = Integer.parseInt(request.getParameter("idProject"));
-        Project project = projectDAO.getProjectForEmployee(idProject, employee.getCompany().getId());
 
-        if(projectDAO.deleteProject(project)) {
-            request.setAttribute("infoProject", "The project was deleted.");
-            doGet(request, response);
-        } else {
-            request.setAttribute("infoProject", "The project wasn't deleted.");
+        try {
+            Integer idProject = Integer.parseInt(request.getParameter("idProject"));
+            Project project = projectDAO.getProjectForEmployee(idProject, employee.getCompany().getId());
+            if (projectDAO.deleteProject(project)) {
+                request.setAttribute("infoProject", "The project was deleted.");
+                doGet(request, response);
+            } else {
+                request.setAttribute("infoProject", "The project wasn't deleted.");
+                doGet(request, response);
+            }
+        } catch (NoResultException e) {
+            request.setAttribute("infoProject", "The project was deleted before.");
             doGet(request, response);
         }
     }
