@@ -46,6 +46,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <h3>Add new task to the project:</h3>
+                            <p class="bg-info text-center">${infoTask}</p>
                         </div>
                     </div>
                     <div class="row">
@@ -54,7 +55,7 @@
                             <c:forEach items="${employees}" var="employee">
                                 <div class="radio" style="padding: 2%; background-color: #f8f8f8">
                                     <label>
-                                        <input type="radio" name="id" value="${employee.getId()}" required>
+                                        <input type="radio" name="nick" value="${employee.getNick()}" required>
                                             ${employee.getName()} ${employee.getSurname()}
                                     </label>
                                 </div>

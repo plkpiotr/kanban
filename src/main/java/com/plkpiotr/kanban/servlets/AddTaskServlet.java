@@ -1,9 +1,12 @@
 package com.plkpiotr.kanban.servlets;
 
 import com.plkpiotr.kanban.dao.CompanyDAO;
+import com.plkpiotr.kanban.dao.EmployeeDAO;
 import com.plkpiotr.kanban.dao.ProjectDAO;
+import com.plkpiotr.kanban.dao.TaskDAO;
 import com.plkpiotr.kanban.domain.Employee;
 import com.plkpiotr.kanban.domain.Project;
+import com.plkpiotr.kanban.domain.Task;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,12 +17,43 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Serves adding a new task to the project.
+ */
 @WebServlet("/addtask")
 public class AddTaskServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
+        HttpSession session = request.getSession();
+
+        ProjectDAO projectDAO = (ProjectDAO) request.getAttribute("projectDAO");
+        EmployeeDAO employeeDAO = (EmployeeDAO) request.getAttribute("employeeDAO");
+        TaskDAO taskDAO = (TaskDAO) request.getAttribute("taskDAO");
+
+        String category = request.getParameter("category");
+        String content = request.getParameter("content");
+        String nick = request.getParameter("nick");
+
+        Employee employee = employeeDAO.getEmployeeByNick(nick);
+        Employee employeeFromSession = (Employee) session.getAttribute("employee");
+        Integer idProject = Integer.parseInt(request.getParameter("idProject"));
+        Project project = projectDAO.getProjectForEmployee(idProject, employeeFromSession.getCompany().getId());
+
+        Task task = new Task();
+        task.setCategory(category);
+        task.setContent(content);
+        task.setEmployee(employee);
+        task.setProject(project);
+
+        if (taskDAO.insertTask(task)) {
+            request.setAttribute("infoTask", "The task was added.");
+            doGet(request, response);
+        } else {
+            request.setAttribute("infoTask", "The task wasn't added.");
+            doGet(request, response);
+        }
     }
 
     @Override
