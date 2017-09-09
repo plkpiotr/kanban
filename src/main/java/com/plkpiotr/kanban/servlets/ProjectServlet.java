@@ -43,18 +43,10 @@ public class ProjectServlet extends HttpServlet {
             List doingTasks = projectDAO.getTasksByCategory(allTasks, "doing");
             List doneTasks = projectDAO.getTasksByCategory(allTasks, "done");
 
-            int todoPercent = 100 * todoTasks.size()/allTasks.size();
-            int doingPercent = 100 * doingTasks.size()/allTasks.size();
-            int donePercent = 100 * doneTasks.size()/allTasks.size();
-
             request.setAttribute("allTasks", allTasks);
             request.setAttribute("todoTasks", todoTasks);
             request.setAttribute("doingTasks", doingTasks);
             request.setAttribute("doneTasks", doneTasks);
-
-            request.setAttribute("todoPercent", todoPercent);
-            request.setAttribute("doingPercent", doingPercent);
-            request.setAttribute("donePercent", donePercent);
 
             request.getRequestDispatcher("/WEB-INF/views/project.jsp").forward(request, response);
         }

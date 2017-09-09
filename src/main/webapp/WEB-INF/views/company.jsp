@@ -86,13 +86,45 @@
                                 <td>${project.getDescription()}</td>
                                 <td>
                                     <a href="project?idProject=${project.getId()}">
-                                        <span class="badge">${project.getListOfTasks().size()}</span>
+                                        <c:choose>
+                                            <c:when test="${project.getListOfTasks() == null}">
+                                                <span class="badge">0</span>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <span class="badge">${project.getListOfTasks().size()}</span>
+                                            </c:otherwise>
+                                        </c:choose>
                                     </a>
                                 </td>
                             </tr>
                         </c:forEach>
                         </tbody>
                     </table>
+                </div>
+            </section>
+            <section class="row">
+                <div class="col-xs-12">
+                    <h2 style="margin-bottom: 4%;">Add a new project:</h2>
+                    <form method="post">
+                        <div class="col-sm-4 text-center">
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input class="form-control" id="name" placeholder="Name" name="name"
+                                       minlength="3" maxlength="15" style="margin-top: 1%;" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 text-center">
+                            <div class="form-group">
+                                <label for="description">Content:</label>
+                                <input class="form-control" id="description" placeholder="Description"
+                                       name="description" minlength="8" maxlength="64" style="margin-top: 1%;" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 text-center">
+                            <input type="hidden" name="idProject" value="0">
+                            <button class="btn btn-primary" style="margin-top: 25px;">Add the project: </button>
+                        </div>
+                    </form>
                 </div>
             </section>
         </article>

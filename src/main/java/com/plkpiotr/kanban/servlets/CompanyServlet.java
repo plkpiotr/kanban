@@ -32,13 +32,29 @@ public class CompanyServlet extends HttpServlet {
 
         try {
             Integer idProject = Integer.parseInt(request.getParameter("idProject"));
-            Project project = projectDAO.getProjectForEmployee(idProject, employee.getCompany().getId());
-            if (projectDAO.deleteProject(project)) {
-                request.setAttribute("infoProject", "The project was deleted.");
-                doGet(request, response);
+            if (idProject == 0) {
+                String name = request.getParameter("name");
+                String description = request.getParameter("description");
+                Project project = new Project();
+                project.setName(name);
+                project.setDescription(description);
+                project.setCompany(employee.getCompany());
+                if (projectDAO.insertProject(project)) {
+                    request.setAttribute("infoProject", "The project was created.");
+                    doGet(request, response);
+                } else {
+                    request.setAttribute("infoProject", "The project wasn't created.");
+                    doGet(request, response);
+                }
             } else {
-                request.setAttribute("infoProject", "The project wasn't deleted.");
-                doGet(request, response);
+                Project project = projectDAO.getProjectForEmployee(idProject, employee.getCompany().getId());
+                if (projectDAO.deleteProject(project)) {
+                    request.setAttribute("infoProject", "The project was deleted.");
+                    doGet(request, response);
+                } else {
+                    request.setAttribute("infoProject", "The project wasn't deleted.");
+                    doGet(request, response);
+                }
             }
         } catch (NoResultException e) {
             request.setAttribute("infoProject", "The project was deleted before.");
