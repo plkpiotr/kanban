@@ -42,31 +42,69 @@
                 </div>
             </header>
             <section>
-                <div class="col-xs-12">
-                    <h3>Add new task to the project:</h3>
-                </div>
-                <div class="row">
-                    <div class="col-xs-2"></div>
-                    <div class="col-xs-8">
-                        <div class="form-group">
-                            <label for="content">Content:</label>
-                            <input class="form-control" id="content" placeholder="Content" name="content" minlength="8"
-                                   maxlength="64" required>
+                <form method="post">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3>Add new task to the project:</h3>
                         </div>
-                        <div class="row">
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4 text-center">
                             <p><strong>Assign employee:</strong></p>
                             <c:forEach items="${employees}" var="employee">
-                                <div class="radio">
+                                <div class="radio" style="padding: 2%; background-color: #f8f8f8">
                                     <label>
-                                        <input type="radio" name="id" value="${employee}" required>
-                                        ${employee.getName()} ${employee.getSurname()}
+                                        <input type="radio" name="id" value="${employee.getId()}" required>
+                                            ${employee.getName()} ${employee.getSurname()}
                                     </label>
                                 </div>
                             </c:forEach>
                         </div>
+                        <div class="col-sm-4 text-center">
+                            <p><strong>Select category:</strong></p>
+                            <div class="form-group">
+                                <div class="radio yellow-note" style="padding: 2%;">
+                                    <label>
+                                        <input type="radio" name="category" value="todo" required>
+                                        To do
+                                    </label>
+                                </div>
+                                <div class="radio green-note" style="padding: 2%;">
+                                    <label>
+                                        <input type="radio" name="category" value="done" required>
+                                        Done
+                                    </label>
+                                </div>
+                                <div class="radio blue-note" style="padding: 2%;">
+                                    <label>
+                                        <input type="radio" name="category" value="doing" required>
+                                        Doing
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 text-center">
+                            <div class="form-group">
+                                <label for="content">Content:</label>
+                                <input class="form-control" id="content" placeholder="Content" name="content"
+                                       minlength="8" maxlength="64" style="margin-top: 1%;" required>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-xs-2"></div>
-                </div>
+                    <div class="row" style="margin-bottom: 1%;">
+                        <div class="col-xs-1"></div>
+                        <div class="col-xs-3 col-md-2 text-right">
+                            <a class="btn btn-default" href="project?idProject=${project.getId()}">
+                                « Back to the project
+                            </a>
+                        </div>
+                        <div class="col-xs-4 col-md-2"></div>
+                        <div class="col-xs-3 col-md-6 text-right">
+                            <button class="btn btn-primary">Add the task »</button>
+                        </div>
+                        <div class="col-xs-1"></div>
+                    </div>
+                </form>
             </section>
         </article>
     </main>
