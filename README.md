@@ -1,14 +1,36 @@
 # Kanban
 ## Description
-Web application based on scheduling system **Kanban**. The program helps manage programming projects (and not just) on the basis of tasks divided into three category: "to do", "doing" and "done".
-## Technologies
-[TODO]
+Web application based on scheduling system **Kanban**. The program helps manage programming projects (and not just programming) on the basis of tasks divided into three category: "to do", "doing" and "done". Each of users belongs to one team and he can inter alia: start new project, add tasks to its, change tasks' category or remove them.
+## Technologies [TODO]
+- Java:
+  - Java EE:
+    - JSP
+    - JSTL
+    - Expression language
+  - JPA & Hibernate:
+    - JPQL
+  - Java 8 SE:
+    - Stream API
+  - JavaDoc:
+    - [TODO]
+  - JUnit:
+    - [TODO]
+   - Servlets, Listeners, Expr
+- HTML5:
+  - Bootstrap 3.0.3
+  - semantic elements from HTML5
+
 ## Features
-[TODO]
+- Overall review of projects carried by company, adding new project or deleting existed: ![company](https://user-images.githubusercontent.com/21959354/30253767-f158fd7a-968b-11e7-95e5-c0c10e33ce16.png)
+- Summary tasks in the projects to which employee belongs: ![profile1](https://user-images.githubusercontent.com/21959354/30253768-f4bc891e-968b-11e7-983d-6f3966291f9f.png)
+- Changing category of tasks or removing what have been done: ![profile2](https://user-images.githubusercontent.com/21959354/30253769-f72bab8a-968b-11e7-89f3-3d18a71fa432.png)
+- Summary tasks in the projects for all team: ![project](https://user-images.githubusercontent.com/21959354/30253770-f925cba0-968b-11e7-9d86-b80eb02b9afa.png)
+- Possibility of adding new tasks setting person responsible for its execution: ![addtask](https://user-images.githubusercontent.com/21959354/30253771-fbef0158-968b-11e7-9830-9f567686e384.png)
 ## Software tools
 - IntelliJ IDEA 2017.2.2
 - PostgreSQL 9.6 [pgAdmin 4]
 - Apache Tomcat 8.5.20
+- Maven 4.0.0
 ## Structure project's
 - src:
   - main:
@@ -50,6 +72,7 @@ Web application based on scheduling system **Kanban**. The program helps manage 
         - views:
           - addtask.jsp
           - company.jsp
+          - error.jsp
           - index.jsp
           - login.jsp
           - profile.jsp
