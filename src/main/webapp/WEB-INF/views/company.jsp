@@ -14,6 +14,7 @@
     <link rel="icon" href="../../img/post-it.png">
     <script src="../../js/jquery-3.2.1.min.js"></script>
     <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/backToTheSamePlace.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-default navbar-static-top">

@@ -15,16 +15,52 @@
     <script src="../../js/bootstrap.min.js"></script>
 </head>
 <body>
-   <div>Icon website's made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those
-        Icons</a> from <a
-            href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a
-            href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+<div id="carousel-example-generic2" class="carousel slide">
+    <!-- Wskaźniki w postaci kropek -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic2" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic2" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic2" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Slajdy -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="http://placehold.it/1280x500" alt="">
+            <!-- Opis slajdu -->
+            <div class="carousel-caption">
+                <h3>To jest opis</h3>
+                <p>pierwszego slajdu</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="http://placehold.it/1280x500" alt="">
+            <!-- Opis slajdu -->
+            <div class="carousel-caption">
+                <h3>To jest opis</h3>
+                <p>drugiego slajdu</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="http://placehold.it/1280x500" alt="">
+            <!-- Opis slajdu -->
+            <div class="carousel-caption">
+                <h3>To jest opis</h3>
+                <p>trzeciego slajdu</p>
+            </div>
+        </div>
+
     </div>
-    <div>Avatars made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a
-            href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a
-            href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
-    </div>
-    <a href="login">Login</a><br>
-    <a href="registration">Registration</a>
-    </body>
+
+    <!-- Strzałki do przewijania -->
+    <a class="left carousel-control" href="#carousel-example-generic2" data-slide="prev">
+        <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic2" data-slide="next">
+        <span class="icon-next"></span>
+    </a>
+</div>
+</body>
 </html>

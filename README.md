@@ -26,12 +26,11 @@
       - ConfigurationListener.java
       - InitializationListener.java
     - java/com/plkpiotr/kanban/servlets:
+      - AddTaskServlet
       - CompanyServlet.java
       - IndexServlet.java
       - LogInServlet.java
       - LogOutServlet.java
-      - NewProjectServlet.java
-      - NewTaskServlet.java
       - ProfileServlet.java
       - ProjectServlet.java
       - RegistrationServlet.java
@@ -44,6 +43,7 @@
       - img:
         - icon, background and avatars [PNG files]
       - js:
+        - backToTheSamePlace.js
         - bootstrap.min.js [ready-made library]
         - jquery-3.2.1.min.js [ready-made library]
       - WEB-INF:
