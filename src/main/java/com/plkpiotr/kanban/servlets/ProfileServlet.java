@@ -1,6 +1,7 @@
 package com.plkpiotr.kanban.servlets;
 
 import com.plkpiotr.kanban.dao.EmployeeDAO;
+import com.plkpiotr.kanban.dao.TaskDAO;
 import com.plkpiotr.kanban.domain.Employee;
 
 import javax.servlet.ServletException;
@@ -21,6 +22,11 @@ public class ProfileServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
+        TaskDAO taskDAO = (TaskDAO) request.getAttribute("taskDAO");
+
+        Integer idTask = Integer.valueOf(request.getParameter("idTask"));
+        taskDAO.changeCategory(idTask);
+        response.sendRedirect(request.getContextPath() + "/profile");
     }
 
     @Override

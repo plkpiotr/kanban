@@ -79,7 +79,11 @@
                                     <h4 class="media-heading">
                                         <a href="project?idProject=${task.getProject().getId()}">${task.getProject().getName()}</a>
                                     </h4>
-                                    ${task.getContent()}
+                                    <strong>${task.getContent()}</strong>
+                                    <form method="post">
+                                        <input type="hidden" name="idTask" value="${task.getId()}">
+                                        <button class="btn btn-warning btn-xs">Move down</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -98,7 +102,11 @@
                                 <h4 class="media-heading">
                                     <a href="project?idProject=${task.getProject().getId()}">${task.getProject().getName()}</a>
                                 </h4>
-                                ${task.getContent()}
+                                <strong>${task.getContent()}</strong>
+                                <form method="post">
+                                    <input type="hidden" name="idTask" value="${task.getId()}">
+                                    <button class="btn btn-success btn-xs">Move down</button>
+                                </form>
                             </div>
                         </div>
                     </c:forEach>
@@ -117,7 +125,11 @@
                                     <h4 class="media-heading">
                                         <a href="project?idProject=${task.getProject().getId()}">${task.getProject().getName()}</a>
                                     </h4>
-                                    ${task.getContent()}
+                                    <strong>${task.getContent()}</strong>
+                                    <form method="post">
+                                        <input type="hidden" name="idTask" value="${task.getId()}">
+                                        <button class="btn btn-info btn-xs">Delete</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
