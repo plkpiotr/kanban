@@ -15,52 +15,62 @@
     <script src="../../js/bootstrap.min.js"></script>
 </head>
 <body>
-<div id="carousel-example-generic2" class="carousel slide">
-    <!-- Wskaźniki w postaci kropek -->
-    <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic2" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic2" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic2" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Slajdy -->
-    <div class="carousel-inner">
-        <div class="item active">
-            <img src="http://placehold.it/1280x500" alt="">
-            <!-- Opis slajdu -->
-            <div class="carousel-caption">
-                <h3>To jest opis</h3>
-                <p>pierwszego slajdu</p>
+    <main class="container">
+        <header class="row">
+            <div class="col-xs-12">
+                <h1>Kanban</h1>
             </div>
-        </div>
-
-        <div class="item">
-            <img src="http://placehold.it/1280x500" alt="">
-            <!-- Opis slajdu -->
-            <div class="carousel-caption">
-                <h3>To jest opis</h3>
-                <p>drugiego slajdu</p>
+        </header>
+        <section>
+            <div id="carousel-example-generic2" class="carousel slide">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic2" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic2" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic2" data-slide-to="2"></li>
+                </ol>
+                <!-- Slajdy -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="http://placehold.it/1280x500" alt="">
+                        <!-- Opis slajdu -->
+                        <div class="carousel-caption">
+                            <h3>To jest opis</h3>
+                            <p>pierwszego slajdu</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="http://placehold.it/1280x500" alt="">
+                        <!-- Opis slajdu -->
+                        <div class="carousel-caption">
+                            <h3>To jest opis</h3>
+                            <p>drugiego slajdu</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="http://placehold.it/1280x500" alt="">
+                        <!-- Opis slajdu -->
+                        <div class="carousel-caption">
+                            <h3>To jest opis</h3>
+                            <p>trzeciego slajdu</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#carousel-example-generic2" data-slide="prev">
+                    <span class="icon-prev"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic2" data-slide="next">
+                    <span class="icon-next"></span>
+                </a>
             </div>
-        </div>
-
-        <div class="item">
-            <img src="http://placehold.it/1280x500" alt="">
-            <!-- Opis slajdu -->
-            <div class="carousel-caption">
-                <h3>To jest opis</h3>
-                <p>trzeciego slajdu</p>
+        </section>
+        <nav>
+            <div class="col-xs-6 text-center" style="margin: 5% 0 2%;">
+                <a class="btn btn-default" href="registration">« Registration</a>
             </div>
-        </div>
-
-    </div>
-
-    <!-- Strzałki do przewijania -->
-    <a class="left carousel-control" href="#carousel-example-generic2" data-slide="prev">
-        <span class="icon-prev"></span>
-    </a>
-    <a class="right carousel-control" href="#carousel-example-generic2" data-slide="next">
-        <span class="icon-next"></span>
-    </a>
-</div>
+            <div class="col-xs-6 text-center" style="margin: 5% 0 2%;">
+                <a class="btn btn-default" href="login">Log in »</a>
+            </div>
+        </nav>
+    </main>
 </body>
 </html>

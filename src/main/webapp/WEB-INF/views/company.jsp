@@ -118,7 +118,7 @@
                         </div>
                         <div class="col-sm-4 text-center">
                             <input type="hidden" name="idProject" value="0">
-                            <button class="btn btn-primary" style="margin-top: 25px;">Add the project: </button>
+                            <button class="btn btn-primary" style="margin-top: 25px;">Add the project »</button>
                         </div>
                     </form>
                 </div>

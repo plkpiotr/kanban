@@ -91,20 +91,5 @@
             </nav>
         </form>
     </div>
-    <footer class="navbar navbar-default navbar-static-top margin-footer" style="margin-bottom: 0">
-        <div class="container">
-            <p class="navbar-text navbar-center">
-                Kanban implemented in Java EE & Hibernate by
-                <a href="https://github.com/plkpiotr">plkpiotr</a>.
-            </p>
-            <p class="navbar-text navbar-left">
-                PNG files on the website were made by
-                <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> and
-                <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from
-                <a href="https://www.flaticon.com/" title="Flaticon">flaticon.com</a> is licensed by
-                <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>.
-            </p>
-        </div>
-    </footer>
 </body>
 </html>

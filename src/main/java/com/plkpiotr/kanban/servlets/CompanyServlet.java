@@ -2,7 +2,6 @@ package com.plkpiotr.kanban.servlets;
 
 import com.plkpiotr.kanban.dao.CompanyDAO;
 import com.plkpiotr.kanban.dao.ProjectDAO;
-import com.plkpiotr.kanban.domain.Company;
 import com.plkpiotr.kanban.domain.Employee;
 import com.plkpiotr.kanban.domain.Project;
 
@@ -69,9 +68,8 @@ public class CompanyServlet extends HttpServlet {
             request.setCharacterEncoding("UTF-8");
             Employee employee = (Employee) session.getAttribute("employee");
             CompanyDAO companyDAO = (CompanyDAO) request.getAttribute("companyDAO");
-            Company company = employee.getCompany();
 
-            List employees = company.getListOfEmployees();
+            List employees = companyDAO.getEmployees(employee.getCompany().getId());
             List projects = companyDAO.getProjects(employee.getCompany().getId());
 
             request.setAttribute("employees", employees);

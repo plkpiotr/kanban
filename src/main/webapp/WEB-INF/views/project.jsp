@@ -80,7 +80,7 @@
                         <div class="media yellow-note neat">
                             <img src="../../img/${task.getEmployee().getAvatar()}" alt="Avatar">
                             <h4>${task.getEmployee().getName()}</h4>
-                            <p>${task.getContent()}</p>
+                            <p><strong>${task.getContent()}</strong></p>
                         </div>
                     </c:forEach>
                 </div>
@@ -95,7 +95,7 @@
                         <div class="media green-note neat">
                             <img src="../../img/${task.getEmployee().getAvatar()}" alt="Avatar">
                             <h4>${task.getEmployee().getName()}</h4>
-                            <p>${task.getContent()}</p>
+                            <p><strong>${task.getContent()}</strong></p>
                         </div>
                     </c:forEach>
                 </div>
@@ -110,7 +110,7 @@
                         <div class="media blue-note neat">
                             <img src="../../img/${task.getEmployee().getAvatar()}" alt="Avatar">
                             <h4>${task.getEmployee().getName()}</h4>
-                            <p>${task.getContent()}</p>
+                            <p><strong>${task.getContent()}</strong></p>
                         </div>
                     </c:forEach>
                 </div>

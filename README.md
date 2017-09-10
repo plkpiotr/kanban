@@ -1,6 +1,6 @@
 # Kanban
 ## Description
-[TODO]
+Web application based on scheduling system **Kanban**. The program helps manage programming projects (and not just) on the basis of tasks divided into three category: "to do", "doing" and "done".
 ## Technologies
 [TODO]
 ## Features
@@ -48,11 +48,10 @@
         - jquery-3.2.1.min.js [ready-made library]
       - WEB-INF:
         - views:
+          - addtask.jsp
           - company.jsp
           - index.jsp
           - login.jsp
-          - newproject.jsp
-          - newtask.jsp
           - profile.jsp
           - project.jsp
           - registration.jsp
@@ -62,9 +61,8 @@
 - pom.xml
 - .idea [ready-made files in .zip]
 - lib [ready-made files in .zip]
-## How to run?
-[TODO]
 ## Comments
-[TODO]
+Icon of Kanban was made by [Those Icon](https://www.flaticon.com/authors/those-icons) from [FlatIcon](https://www.flaticon.com/) is licensed by [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/).
+Avatars on the website were made by [Eucalyp](https://www.flaticon.com/authors/eucalyp) from [FlatIcon](https://www.flaticon.com/) is licensed by [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/).
 ## License
 Apache License 2.0 

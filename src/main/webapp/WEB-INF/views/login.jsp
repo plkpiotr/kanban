@@ -33,7 +33,7 @@
                     </div>
                     <nav>
                         <div class="col-xs-12" style="margin-bottom: 5%;">
-                            <button class="btn btn-primary">Login »</button>
+                            <button class="btn btn-primary">Log in »</button>
                         </div>
                         <div class="col-xs-12" style="margin-bottom: 5%;">
                             <a class="btn btn-default" href="index">« Home page</a>
