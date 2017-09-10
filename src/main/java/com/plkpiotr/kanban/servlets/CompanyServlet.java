@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Serves view of a company.
+ * Serves view of a company, adding and deleting projects carry out in a company.
  */
 @WebServlet("/company")
 public class CompanyServlet extends HttpServlet {

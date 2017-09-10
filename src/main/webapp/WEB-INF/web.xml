@@ -21,7 +21,9 @@
         <location>/WEB-INF/views/error.jsp</location>
     </error-page>
 
-<!--<login-config>
+    <!--
+
+    <login-config>
         <auth-method>FORM</auth-method>
         <form-login-config>
             <form-login-page>/login</form-login-page>
@@ -41,6 +43,7 @@
             <http-method>POST</http-method>
         </web-resource-collection>
     </security-constraint>
-!-->
+
+    !-->
 
 </web-app>

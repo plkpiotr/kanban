@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 
 /**
  * Provides "Data Access Object" for "Employee" class.
+ * @see Employee
  */
 public class EmployeeDAO {
     private EntityManager entityManager;
@@ -26,13 +27,13 @@ public class EmployeeDAO {
     }
 
     /**
-     * Inserts a employee to database.
+     * Inserts the employee to database.
      *
      * @param employee Employee object waiting for inserting to database.
+     * @return If employee was added true, otherwise false.
      */
     public boolean insertEmployee(Employee employee) {
         EntityTransaction entityTransaction = entityManager.getTransaction();
-        // employee.setPassword(this.encodePassword(employee.getPassword()));
         try {
             entityTransaction.begin();
             entityManager.persist(employee);
@@ -48,6 +49,7 @@ public class EmployeeDAO {
      * Encodes password on the basis of "Message-Digest algorithm 5".
      *
      * @param passwordToHash Password posts in a form.
+     * @return Generated password on the basis of MD5
      */
     public String encodePassword(String passwordToHash) {
         String generatedPassword = null;
@@ -68,7 +70,8 @@ public class EmployeeDAO {
     /**
      * Gets employee by nick.
      *
-     * @param nick Nick employee's.
+     * @param nick Employee's nick.
+     * @return Found employee from database.
      */
     public Employee getEmployeeByNick(final String nick) {
         return (Employee) entityManager.createQuery("SELECT e from Employee e WHERE e.nick = :nick")
@@ -77,10 +80,12 @@ public class EmployeeDAO {
     }
 
     /**
-     * Gets employee by nick.
+     * Gets employee by nick and password.
+     * Used during logging.
      *
-     * @param nick Nick employee's.
-     * @param password Nick employee's.
+     * @param nick Employee's nick.
+     * @param password Employee's password.
+     * @return Found employee from database.
      */
     public Employee getEmployeeByNickAndPassword(final String nick, final String password) {
         return (Employee) entityManager.createQuery("SELECT e from Employee e WHERE e.nick = :nick AND e.password = " +
@@ -91,9 +96,10 @@ public class EmployeeDAO {
     }
 
     /**
-     * Gets all tasks for a employee.
+     * Gets all tasks for the employee.
      *
-     * @param idEmployee ID employee's.
+     * @param idEmployee Employee's ID.
+     * @return All tasks for one employee as list.
      */
     public List getAllTasks(final Integer idEmployee) {
         return entityManager.createQuery("SELECT t from Task t WHERE t.employee.id = :idEmployee")
@@ -102,10 +108,11 @@ public class EmployeeDAO {
     }
 
     /**
-     * Gets tasks for a employee by category.
+     * Gets tasks for the employee by category.
      *
-     * @param tasks List of all tasks for a employee.
+     * @param tasks List of all tasks for the employee.
      * @param category One of the category task's: "todo", "doing" or "done".
+     * @return One kind of tasks for one employee as list.
      */
     public List<Task> getTasksByCategory(List<Task> tasks, final String category) {
         return tasks.stream()
@@ -114,9 +121,10 @@ public class EmployeeDAO {
     }
 
     /**
-     * Gets company by name. WHY?
+     * Gets company by name.
      *
-     * @param name ID company's.
+     * @param name Company's ID.
+     * @return This company to which employee belongs as list in order to avoid NoResultException.
      */
     public List getCompany(final String name) {
         return entityManager.createQuery("SELECT c from Company c WHERE c.name = :name")

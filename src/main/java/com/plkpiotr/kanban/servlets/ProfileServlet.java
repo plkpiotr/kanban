@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Serves view of a profile.
+ * Serves view of a profile and it enables change tasks' category.
  */
 @WebServlet("/profile")
 public class ProfileServlet extends HttpServlet {

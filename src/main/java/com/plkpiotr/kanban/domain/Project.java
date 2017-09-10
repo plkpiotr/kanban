@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * Represents a project.
- * A project belongs to a company, can have many employees and many tasks.
+ * A project belongs to a company, it can have many employees and many tasks.
  */
 @Entity
 @Table(name = "projects")

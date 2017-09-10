@@ -1,18 +1,20 @@
 package com.plkpiotr.kanban.dao;
 
 import com.plkpiotr.kanban.domain.Company;
-import com.plkpiotr.kanban.domain.Employee;
-import com.plkpiotr.kanban.domain.Project;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import java.util.List;
 
+/**
+ * Provides "Data Access Object" for "Company" class.
+ * @see Company
+ */
 public class CompanyDAO {
     private EntityManager entityManager;
 
     /**
-     * Creates a company through given manager of entities.
+     * Serves a company through given manager of entities.
      *
      * @param entityManager Manager of entities for employee.
      */
@@ -21,7 +23,7 @@ public class CompanyDAO {
     }
 
     /**
-     * Inserts a company to database.
+     * Inserts the company to database.
      *
      * @param company Company object waiting for inserting to database.
      */
@@ -37,22 +39,24 @@ public class CompanyDAO {
     }
 
     /**
-     * Gets all projects in a company.
+     * Gets all projects in the company.
      *
      * @param idCompany ID company's.
+     * @return All projects in the company as list.
      */
-    public List<Project> getProjects(final int idCompany) {
+    public List getProjects(final int idCompany) {
         return entityManager.createQuery("SELECT p from Project p WHERE p.company.id = :idCompany")
                 .setParameter("idCompany", idCompany)
                 .getResultList();
     }
 
     /**
-     * Gets all employees in a company.
+     * Gets all employees in the company.
      *
      * @param idCompany ID company's.
+     * @return All employees in the company as list.
      */
-    public List<Employee> getEmployees(final int idCompany) {
+    public List getEmployees(final int idCompany) {
         return entityManager.createQuery("SELECT e from Employee e WHERE e.company.id = :idCompany")
                 .setParameter("idCompany", idCompany)
                 .getResultList();

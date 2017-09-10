@@ -7,12 +7,13 @@ import javax.persistence.EntityTransaction;
 
 /**
  * Provides "Data Access Object" for "Task" class.
+ * @see Task
  */
 public class TaskDAO {
     private EntityManager entityManager;
 
     /**
-     * Creates a task through given manager of entities.
+     * Serves a task through given manager of entities.
      *
      * @param entityManager Manager of entities for task.
      */
@@ -21,9 +22,10 @@ public class TaskDAO {
     }
 
     /**
-     * Inserts a task to database.
+     * Inserts the task to database.
      *
      * @param task Task object waiting for inserting to database.
+     * @return If task was added function return true, otherwise false.
      */
     public boolean insertTask(Task task) {
         EntityTransaction entityTransaction = entityManager.getTransaction();
@@ -49,7 +51,7 @@ public class TaskDAO {
                 .setParameter("id", id)
                 .getSingleResult();
         EntityTransaction entityTransaction = entityManager.getTransaction();
-        int changedTasks = 0;
+        int changedTasks;
         switch (category) {
             case "todo":
                 entityTransaction = entityManager.getTransaction();
