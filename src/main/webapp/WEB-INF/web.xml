@@ -11,6 +11,16 @@
         <welcome-file>/WEB-INF/views/index.jsp</welcome-file>
     </welcome-file-list>
 
+    <error-page>
+        <error-code>500</error-code>
+        <location>/WEB-INF/views/error.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/WEB-INF/views/error.jsp</location>
+    </error-page>
+
 <!--<login-config>
         <auth-method>FORM</auth-method>
         <form-login-config>
