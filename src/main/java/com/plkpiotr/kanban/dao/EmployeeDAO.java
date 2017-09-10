@@ -5,7 +5,6 @@ import com.plkpiotr.kanban.domain.Task;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
-import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
@@ -46,24 +45,24 @@ public class EmployeeDAO {
     }
 
     /**
-     * Encodes password through "Message-Digest algorithm 5".
+     * Encodes password on the basis of "Message-Digest algorithm 5".
      *
-     * @param password Password posts in a form.
+     * @param passwordToHash Password posts in a form.
      */
-    private String encodePassword(String password) {
-        MessageDigest messageDigest = null;
+    public String encodePassword(String passwordToHash) {
+        String generatedPassword = null;
         try {
-            MessageDigest.getInstance("MD5");
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            md.update(passwordToHash.getBytes());
+            byte[] bytes = md.digest();
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i< bytes.length; i++)
+                sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
+            generatedPassword = sb.toString();
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
-            return null;
         }
-        messageDigest.update(password.getBytes());
-        BigInteger hashCode = new BigInteger(1, messageDigest.digest());
-        String finished = hashCode.toString(16);
-        if (finished.length() == 31)
-            finished = "0" + finished;
-        return finished;
+        return generatedPassword;
     }
 
     /**

@@ -38,6 +38,7 @@ public class RegistrationServlet extends HttpServlet {
             employee.setName(name);
             employee.setSurname(surname);
             employee.setNick(nick);
+            password = employeeDAO.encodePassword(password);
             employee.setPassword(password);
             employee.setAvatar(avatar);
             if (employeeDAO.getCompany(companyName).size() == 0) {

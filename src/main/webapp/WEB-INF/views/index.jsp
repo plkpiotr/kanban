@@ -18,7 +18,7 @@
     <main class="container">
         <header class="row">
             <div class="col-xs-12">
-                <h1>Kanban</h1>
+                <h1><strong>Kanban</strong></h1>
             </div>
         </header>
         <section>

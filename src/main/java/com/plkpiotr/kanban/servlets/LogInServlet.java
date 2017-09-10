@@ -21,9 +21,11 @@ public class LogInServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
+        EmployeeDAO employeeDAO = (EmployeeDAO) request.getAttribute("employeeDAO");
+
         String nick = request.getParameter("nick");
         String password = request.getParameter("password");
-        EmployeeDAO employeeDAO = (EmployeeDAO) request.getAttribute("employeeDAO");
+        password = employeeDAO.encodePassword(password);
         try {
             Employee employee = employeeDAO.getEmployeeByNickAndPassword(nick, password);
             HttpSession session = request.getSession();
