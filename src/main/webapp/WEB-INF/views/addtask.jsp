@@ -72,14 +72,14 @@
                                 </div>
                                 <div class="radio green-note" style="padding: 2%;">
                                     <label>
-                                        <input type="radio" name="category" value="done" required>
-                                        Done
+                                        <input type="radio" name="category" value="doing" required>
+                                        Doing
                                     </label>
                                 </div>
                                 <div class="radio blue-note" style="padding: 2%;">
                                     <label>
-                                        <input type="radio" name="category" value="doing" required>
-                                        Doing
+                                        <input type="radio" name="category" value="done" required>
+                                        Done
                                     </label>
                                 </div>
                             </div>
