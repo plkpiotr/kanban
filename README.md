@@ -25,7 +25,7 @@ Web application based on scheduling system **Kanban**. The program helps manage 
 - Summary tasks in the projects to which employee belongs: ![profile1](https://user-images.githubusercontent.com/21959354/30253768-f4bc891e-968b-11e7-983d-6f3966291f9f.png)
 - Changing category of tasks or removing what have been done: ![profile2](https://user-images.githubusercontent.com/21959354/30253769-f72bab8a-968b-11e7-89f3-3d18a71fa432.png)
 - Summary tasks in the projects for all team: ![project](https://user-images.githubusercontent.com/21959354/30253770-f925cba0-968b-11e7-9d86-b80eb02b9afa.png)
-- Possibility of adding new tasks setting person responsible for its execution: ![addtask](https://user-images.githubusercontent.com/21959354/30253771-fbef0158-968b-11e7-9830-9f567686e384.png)
+- Possibility of adding new tasks, setting person responsible for its execution: ![addtask](https://user-images.githubusercontent.com/21959354/30253771-fbef0158-968b-11e7-9830-9f567686e384.png)
 ## Software tools
 - IntelliJ IDEA 2017.2.2
 - PostgreSQL 9.6 [pgAdmin 4]
@@ -85,7 +85,8 @@ Web application based on scheduling system **Kanban**. The program helps manage 
 - .idea [ready-made files in .zip]
 - lib [ready-made files in .zip]
 ## Comments
-Icon of Kanban was made by [Those Icon](https://www.flaticon.com/authors/those-icons) from [FlatIcon](https://www.flaticon.com/) is licensed by [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/).
+Icon of Kanban was made by [Those Icon](https://www.flaticon.com/authors/those-icons) from [FlatIcon](https://www
+.flaticon.com/) is licensed by [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/).  
 Avatars on the website were made by [Eucalyp](https://www.flaticon.com/authors/eucalyp) from [FlatIcon](https://www.flaticon.com/) is licensed by [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/).
 ## License
 Apache License 2.0 
