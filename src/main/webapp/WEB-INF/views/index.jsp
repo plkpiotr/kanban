@@ -28,31 +28,15 @@
                     <li data-target="#carousel-example-generic2" data-slide-to="1"></li>
                     <li data-target="#carousel-example-generic2" data-slide-to="2"></li>
                 </ol>
-                <!-- Slajdy -->
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img src="http://placehold.it/1280x500" alt="">
-                        <!-- Opis slajdu -->
-                        <div class="carousel-caption">
-                            <h3>To jest opis</h3>
-                            <p>pierwszego slajdu</p>
-                        </div>
+                        <img src="../../img/index1.png" alt="Company">
                     </div>
                     <div class="item">
-                        <img src="http://placehold.it/1280x500" alt="">
-                        <!-- Opis slajdu -->
-                        <div class="carousel-caption">
-                            <h3>To jest opis</h3>
-                            <p>drugiego slajdu</p>
-                        </div>
+                        <img src="../../img/index2.png" alt="Profile">
                     </div>
                     <div class="item">
-                        <img src="http://placehold.it/1280x500" alt="">
-                        <!-- Opis slajdu -->
-                        <div class="carousel-caption">
-                            <h3>To jest opis</h3>
-                            <p>trzeciego slajdu</p>
-                        </div>
+                        <img src="../../img/index3.png" alt="Kanban board">
                     </div>
                 </div>
                 <a class="left carousel-control" href="#carousel-example-generic2" data-slide="prev">
@@ -63,11 +47,16 @@
                 </a>
             </div>
         </section>
+        <section class="row">
+            <div class="col-xs-12">
+                <h3>Kanban board implemented in Java EE, Hibernate & JPA</h3>
+            </div>
+        </section>
         <nav>
-            <div class="col-xs-6 text-center" style="margin: 5% 0 2%;">
+            <div class="col-xs-6 text-center" style="margin: 2% 0 2%;">
                 <a class="btn btn-default" href="registration">« Registration</a>
             </div>
-            <div class="col-xs-6 text-center" style="margin: 5% 0 2%;">
+            <div class="col-xs-6 text-center" style="margin: 2% 0 2%;">
                 <a class="btn btn-default" href="login">Log in »</a>
             </div>
         </nav>
