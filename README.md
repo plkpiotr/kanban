@@ -85,7 +85,12 @@ Web application based on scheduling system **Kanban**. The program helps manage 
 - .idea [ready-made files in .zip]
 - lib [ready-made files in .zip]
 ## Comments
+<<<<<<< HEAD
 Icon of Kanban was made by [Those Icon](https://www.flaticon.com/authors/those-icons) from [FlatIcon](https://www.flaticon.com/) is licensed by [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/).  
+=======
+Icon of Kanban was made by [Those Icon](https://www.flaticon.com/authors/those-icons) from [FlatIcon](https://www
+.flaticon.com/) is licensed by [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/).  
+>>>>>>> 46e997a1804e57dab887f75d564023b431f5182b
 Avatars on the website were made by [Eucalyp](https://www.flaticon.com/authors/eucalyp) from [FlatIcon](https://www.flaticon.com/) is licensed by [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/).
 ## License
 Apache License 2.0 
