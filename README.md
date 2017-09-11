@@ -9,6 +9,7 @@ Web application based on scheduling system **Kanban**. The program helps manage 
     - Expression Language
   - JPA & Hibernate:
     - JPQL [adding, updating, selecting and deleting queries]
+    - specifying relations between entities in database and parameters of columns in tables
   - Java 8 SE:
     - Stream API
   - JavaDoc:
