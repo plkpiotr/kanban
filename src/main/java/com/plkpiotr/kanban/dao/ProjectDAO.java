@@ -44,7 +44,7 @@ public class ProjectDAO {
     }
 
     /**
-     * Delete the project from database
+     * Deletes the project from database
      *
      * @param project Project object waiting for deleting from database.
      * @return If employee was deleted true, otherwise false.
