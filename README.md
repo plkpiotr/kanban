@@ -1,6 +1,6 @@
 # Kanban
 ## Description
-Web application based on scheduling system **Kanban**. The program helps manage programming projects (and not just programming) on the basis of tasks divided into three category: "to do", "doing" and "done". Each of users belongs to one team and he can inter alia: start new project, add tasks to its, change tasks' category or remove them.
+Web application based on scheduling system **Kanban**. The program helps manage programming projects (and not just programming) on the basis of tasks divided into three category: "to do", "doing" and "done". Each of users belongs to one team and user can inter alia: start new project, add tasks to its, change tasks' category or remove them.
 ## Technologies
 - Java:
   - Java EE:
