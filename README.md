@@ -17,9 +17,9 @@ Web application based on scheduling system **Kanban**. The program helps manage 
     - [TODO]
    - Servlets, listeners, annotations, hashing passwords
 - HTML5:
-  - Bootstrap 3.0.3 [RWD]
-  - Semantic elements from HTML5
+  - Bootstrap 3.0.3 [Responsive Web Design]
   - Data validation in login form and registration form
+  - Semantic elements from HTML5
 - CSS
 - JavaScript
 ## Features
