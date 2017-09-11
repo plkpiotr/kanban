@@ -6,20 +6,22 @@ Web application based on scheduling system **Kanban**. The program helps manage 
   - Java EE:
     - JSP
     - JSTL
-    - Expression language
+    - Expression Language
   - JPA & Hibernate:
     - JPQL
   - Java 8 SE:
     - Stream API
   - JavaDoc:
-    - [TODO]
+    - [Documentation](http://plkpiotr.ayz.pl/)
   - JUnit:
     - [TODO]
-   - Servlets, Listeners, Expr
+   - Servlets, listeners, annotations, hashing passwords
 - HTML5:
-  - Bootstrap 3.0.3
-  - semantic elements from HTML5
-
+  - Bootstrap 3.0.3 [RWD]
+  - Semantic elements from HTML5
+  - Data validation in login form and registration form
+- CSS
+- JavaScript
 ## Features
 - Overall review of projects carried by company, adding new project or deleting existed: ![company](https://user-images.githubusercontent.com/21959354/30253767-f158fd7a-968b-11e7-95e5-c0c10e33ce16.png)
 - Summary tasks in the projects to which employee belongs: ![profile1](https://user-images.githubusercontent.com/21959354/30253768-f4bc891e-968b-11e7-983d-6f3966291f9f.png)
@@ -28,7 +30,7 @@ Web application based on scheduling system **Kanban**. The program helps manage 
 - Possibility of adding new tasks setting person responsible for its execution: ![addtask](https://user-images.githubusercontent.com/21959354/30253771-fbef0158-968b-11e7-9830-9f567686e384.png)
 ## Software tools
 - IntelliJ IDEA 2017.2.2
-- PostgreSQL 9.6 [pgAdmin 4]
+- pgAdmin 4 [PostgreSQL 9.6]
 - Apache Tomcat 8.5.20
 - Maven 4.0.0
 ## Structure project's
@@ -82,8 +84,6 @@ Web application based on scheduling system **Kanban**. The program helps manage 
   - test:
     - [TODO]
 - pom.xml
-- .idea [ready-made files in .zip]
-- lib [ready-made files in .zip]
 ## Comments
 Icon of Kanban was made by [Those Icon](https://www.flaticon.com/authors/those-icons) from [FlatIcon](https://www.flaticon.com/) is licensed by [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/).  
 Avatars on the website were made by [Eucalyp](https://www.flaticon.com/authors/eucalyp) from [FlatIcon](https://www.flaticon.com/) is licensed by [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/).
