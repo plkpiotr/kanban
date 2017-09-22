@@ -22,7 +22,6 @@ Web application based on scheduling system **Kanban**. The program helps manage 
   - Data validation in login form and registration form
   - Semantic elements from HTML5
 - CSS
-- JavaScript
 ## Features
 - Overall review of projects carried by company, adding new project or deleting existed: ![company](https://user-images.githubusercontent.com/21959354/30253767-f158fd7a-968b-11e7-95e5-c0c10e33ce16.png)
 - Summary tasks in the projects to which employee belongs: ![profile1](https://user-images.githubusercontent.com/21959354/30253768-f4bc891e-968b-11e7-983d-6f3966291f9f.png)
