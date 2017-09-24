@@ -81,8 +81,6 @@ Web application based on scheduling system **Kanban**. The program helps manage 
           - project.jsp
           - registration.jsp
         - web.xml
-  - test:
-    - [TODO]
 - pom.xml
 ## Comments
 Icon of Kanban was made by [Those Icon](https://www.flaticon.com/authors/those-icons) from [FlatIcon](https://www.flaticon.com/) is licensed by [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/).  
