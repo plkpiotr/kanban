@@ -14,11 +14,11 @@ Web application based on scheduling system **Kanban**. The program helps manage 
     - Stream API
   - JavaDoc:
     - [Documentation](http://plkpiotr.ayz.pl/)
-   - Servlets, listeners, annotations, hashing passwords
+   - servlets, listeners, annotations, hashing passwords
 - HTML:
   - Bootstrap 3.0.3 [Responsive Web Design]
-  - Data validation in login form and registration form
-  - Semantic elements from HTML5
+  - data validation in login form and registration form
+  - semantic elements from HTML5
 - CSS
 ## Features
 - Overall review of projects carried by company, adding new project or deleting existed: ![company](https://user-images.githubusercontent.com/21959354/30253767-f158fd7a-968b-11e7-95e5-c0c10e33ce16.png)
