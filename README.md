@@ -14,8 +14,6 @@ Web application based on scheduling system **Kanban**. The program helps manage 
     - Stream API
   - JavaDoc:
     - [Documentation](http://plkpiotr.ayz.pl/)
-  - JUnit:
-    - [TODO]
    - Servlets, listeners, annotations, hashing passwords
 - HTML:
   - Bootstrap 3.0.3 [Responsive Web Design]
