@@ -102,7 +102,7 @@
             </section>
             <div class="row">
                 <div class="col-xs-12">
-                    <h3 id="doing"><strong>Done:</strong></h3>
+                    <h3 id="done"><strong>Done:</strong></h3>
                     <c:if test="${doneTasks[0] == null}">
                         <p>No tasks.</p>
                     </c:if>
