@@ -18,7 +18,7 @@
     <main class="container">
         <header class="row">
             <div class="col-xs-12">
-                <h1><strong>Kanban</strong></h1>
+                <h3>Kanban board implemented in Java EE, Hibernate & JPA</h3>
             </div>
         </header>
         <section>
@@ -45,11 +45,6 @@
                 <a class="right carousel-control" href="#carousel-example-generic2" data-slide="next">
                     <span class="icon-next"></span>
                 </a>
-            </div>
-        </section>
-        <section class="row">
-            <div class="col-xs-12">
-                <h3>Kanban board implemented in Java EE, Hibernate & JPA</h3>
             </div>
         </section>
         <nav>
