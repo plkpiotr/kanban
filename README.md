@@ -29,7 +29,7 @@ Web application based on scheduling system **Kanban**. The program helps manage 
 ## Software tools
 - IntelliJ IDEA 2017.2.2
 - pgAdmin 4 [PostgreSQL 9.6]
-- Apache Tomcat 8.5.20
+- Apache Tomcat 8.5.30
 - Maven 4.0.0
 ## Structure project's
 - src:
