@@ -32,54 +32,72 @@ Web application based on scheduling system **Kanban**. The program helps manage 
 - Apache Tomcat 8.5.30
 - Maven 4.0.0
 ## Structure project's
-- src:
-  - main:
-    - java/com/plkpiotr/kanban/dao:
-      - CompanyDAO.java
-      - EmployeeDAO.java
-      - ProjectDAO.java
-      - TaskDAO.java
-    - java/com/plkpiotr/kanban/domain:
-      - Company.java
-      - Employee.java
-      - Project.java
-      - Task.java
-    - java/com/plkpiotr/kanban/listeners:
-      - ConfigurationListener.java
-      - InitializationListener.java
-    - java/com/plkpiotr/kanban/servlets:
-      - AddTaskServlet
-      - CompanyServlet.java
-      - IndexServlet.java
-      - LogInServlet.java
-      - LogOutServlet.java
-      - ProfileServlet.java
-      - ProjectServlet.java
-      - RegistrationServlet.java
-    - resources/META-INF:
-      - persistence.xml
-    - webapp:
-      - css:
-        - bootstrap.min.css [ready-made library]
-        - style.css
-      - img:
-        - icon, background and avatars [PNG files]
-      - js:
-        - backToTheSamePlace.js
-        - bootstrap.min.js [ready-made library]
-        - jquery-3.2.1.min.js [ready-made library]
-      - WEB-INF:
-        - views:
-          - addtask.jsp
-          - company.jsp
-          - error.jsp
-          - index.jsp
-          - login.jsp
-          - profile.jsp
-          - project.jsp
-          - registration.jsp
-        - web.xml
-- pom.xml
+```elixir
+│   Kanban.iml
+│   pom.xml
+│
+└───src
+    └───main
+        ├───java
+        │   └───com
+        │       └───plkpiotr
+        │           └───kanban
+        │               ├───dao
+        │               │       CompanyDAO.java
+        │               │       EmployeeDAO.java
+        │               │       ProjectDAO.java
+        │               │       TaskDAO.java
+        │               │
+        │               ├───domain
+        │               │       Company.java
+        │               │       Employee.java
+        │               │       Project.java
+        │               │       Task.java
+        │               │
+        │               ├───listeners
+        │               │       ConfigurationListener.java
+        │               │       InitializationListener.java
+        │               │
+        │               └───servlets
+        │                       AddTaskServlet.java
+        │                       CompanyServlet.java
+        │                       IndexServlet.java
+        │                       LogInServlet.java
+        │                       LogOutServlet.java
+        │                       ProfileServlet.java
+        │                       ProjectServlet.java
+        │                       RegistrationServlet.java
+        │
+        ├───resources
+        │   └───META-INF
+        │           persistence.xml
+        │
+        └───webapp
+            ├───css
+            │       bootstrap.min.css
+            │       style.css
+            │
+            ├───img
+            │       [PNG files]
+            │
+            ├───js
+            │       backToTheSamePlace.js
+            │       bootstrap.min.js
+            │       jquery-3.2.1.min.js
+            │
+            └───WEB-INF
+                │   web.xml
+                │
+                └───views
+                        addtask.jsp
+                        company.jsp
+                        error.jsp
+                        index.jsp
+                        login.jsp
+                        profile.jsp
+                        project.jsp
+                        registration.jsp
+```
 ## Comments
 Icon of Kanban was made by [Those Icon](https://www.flaticon.com/authors/those-icons) from [FlatIcon](https://www.flaticon.com/) is licensed by [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/).  
 Avatars on the website were made by [Eucalyp](https://www.flaticon.com/authors/eucalyp) from [FlatIcon](https://www.flaticon.com/) is licensed by [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/).
