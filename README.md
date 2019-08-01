@@ -31,7 +31,7 @@ Web application based on scheduling system **Kanban**. The program helps manage 
 - pgAdmin 4 [PostgreSQL 9.6]
 - Apache Tomcat 8.5.30
 - Maven 4.0.0
-## Structure project's
+## Project structure
 ```elixir
 │   Kanban.iml
 │   pom.xml
