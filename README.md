@@ -36,29 +36,29 @@ Web application based on scheduling system **Kanban**. The program helps manage 
 │   Kanban.iml
 │   pom.xml
 │
-└───src
-    └───main
-        ├───java
-        │   └───com
-        │       └───plkpiotr
-        │           └───kanban
-        │               ├───dao
+└───src:
+    └───main:
+        ├───java:
+        │   └───com:
+        │       └───plkpiotr:
+        │           └───kanban:
+        │               ├───dao:
         │               │       CompanyDAO.java
         │               │       EmployeeDAO.java
         │               │       ProjectDAO.java
         │               │       TaskDAO.java
         │               │
-        │               ├───domain
+        │               ├───domain:
         │               │       Company.java
         │               │       Employee.java
         │               │       Project.java
         │               │       Task.java
         │               │
-        │               ├───listeners
+        │               ├───listeners:
         │               │       ConfigurationListener.java
         │               │       InitializationListener.java
         │               │
-        │               └───servlets
+        │               └───servlets:
         │                       AddTaskServlet.java
         │                       CompanyServlet.java
         │                       IndexServlet.java
@@ -68,27 +68,27 @@ Web application based on scheduling system **Kanban**. The program helps manage 
         │                       ProjectServlet.java
         │                       RegistrationServlet.java
         │
-        ├───resources
-        │   └───META-INF
+        ├───resources:
+        │   └───META-INF:
         │           persistence.xml
         │
-        └───webapp
-            ├───css
+        └───webapp:
+            ├───css:
             │       bootstrap.min.css
             │       style.css
             │
-            ├───img
+            ├───img:
             │       [PNG files]
             │
-            ├───js
+            ├───js:
             │       backToTheSamePlace.js
             │       bootstrap.min.js
             │       jquery-3.2.1.min.js
             │
-            └───WEB-INF
+            └───WEB-INF:
                 │   web.xml
                 │
-                └───views
+                └───views:
                         addtask.jsp
                         company.jsp
                         error.jsp
